@@ -7,6 +7,7 @@ import Color from './components/pages/guidelines/Color'
 import MediaQueries from './components/pages/guidelines/MediaQueries'
 import Guidelines from './components/pages/guidelines/Guidelines'
 import Spacing from './components/pages/guidelines/Spacing'
+import PatternLibrary from './components/pages/PatternLibrary'
 import { Icon } from './components/atoms/Icon'
 import './App.css';
 import './stylesheets/root.css'
@@ -30,6 +31,9 @@ function App() {
       )}/>
       <Route path='/guidelines/mediaqueries' render={() => (
         <MediaQueries/>
+      )}/>
+      <Route path='/pattern-library' render={() => (
+        <PatternLibrary/>
       )}/>
       </div>
     </div>

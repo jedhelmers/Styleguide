@@ -19,6 +19,11 @@ label,
   color: var(--win-primary-text);
 }
 
+code {
+  font-family: monospace;
+  font-size: 13px
+}
+
 h1 {
   font-size: 32px;
 }
@@ -364,12 +369,29 @@ td {
 a {
   font-size: 13px;
   color: inherit;
+  font-weight: 700;
   cursor: pointer;
-  text-decoration: none
+  text-decoration: none;
+  color: var(--win-primary)
 }
 
 a:hover {
-  opacity: .78
+  opacity: .78;
+  color: var(--win-primary-dark)
+}
+
+.nav-link {
+  font-size: 13px;
+  color: inherit;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--white)
+}
+
+.nav-link:hover {
+  opacity: .78;
+  color: var(--white-secondary)
 }
 
 i > .clickable:hover {
@@ -563,6 +585,8 @@ input::placeholder {
 .underline {
   border-bottom-color: var(--win-chroma-3);
   border-bottom-style: solid;
+  padding-top: 10px;
+  margin-bottom: 10px
 }
 
 .uppercase {
