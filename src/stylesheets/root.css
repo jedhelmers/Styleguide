@@ -1,0 +1,37 @@
+:root {
+  --white: rgba(255, 255, 255, 1);
+  --white-secondary: rgba(255, 255, 255, .78);
+  --white-help: rgba(255, 255, 255, .6);
+  --win-chroma-1: #F5F5F5;
+  --win-chroma-2: #eeeeee;
+  --win-chroma-3: #CCCCCC;
+  --win-chroma-4: #999999;
+  --win-chroma-5: #515151;
+  --win-chroma-6: #444444;
+  --win-chroma-7: rgba(40, 44, 52, 1);
+  --win-chroma-x: #eaeaea;
+  --win-primary-text: rgba(0, 0, 0, .78);
+  --win-secondary-text: rgba(0, 0, 0, .6);
+  --win-help: rgba(0, 0, 0, .35);
+  --black: #000000;
+  --win-hover: rgba(0, 114, 207, .1);
+  --win-select: #cfe9ff;
+  --win-select-odd: #c4ddf2;
+  --win-primary: #0072cf;
+  --win-primary-rgb: 0, 114, 207;
+  --win-primary-dark: #004882;
+  --win-primary-darker: #003a69;
+  --win-tertiary: #739849;
+  --win-success: #668741;
+  --win-success-secondary: #009933;
+  --win-success-secondary-dark: #007025;
+  --win-alert: #d8c726;
+  --win-alert-dark: #978b1b;
+  --win-warning: #e28f3e;
+  --win-warning-dark: #ce751f;
+  --win-error: #cc0000;
+  --win-error-dark: #800000;
+  --win-error-darker: #660000;
+  --win-logo: url(https://cdn.winwholesale.com/default/img/logo-color.svg);
+  --win-weight: normal;
+}
