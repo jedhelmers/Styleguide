@@ -20,50 +20,78 @@ let menu = {
   components: [
     {
       title: 'Headings',
-      link: ''
+      link: '/components/headings'
     },
     {
       title: 'Icons',
-      link: ''
+      link: '/components/icons'
     },
     {
       title: 'Buttons',
-      link: ''
+      link: '/components/buttons'
     },
     {
       title: 'Forms',
-      link: ''
+      link: '/components/forms'
     },
     {
       title: 'Content Layout',
-      link: ''
+      link: '/components/contentlayout'
     },
     {
       title: 'Page Layout',
-      link: ''
+      link: '/components/pagelayout'
     },
     {
       title: 'Layout Utilities',
-      link: ''
+      link: '/components/layoututilities'
     },
     {
       title: 'Navigation',
-      link: ''
+      link: '/components/navigation'
     },
     {
       title: 'Theme Context',
-      link: ''
+      link: '/components/themecontext'
     },
     {
       title: 'Misc.',
-      link: ''
+      link: '/components/misc'
     }
   ],
   styleUtilities: [
     {
-      title: '',
-      link: ''
-    }
+      title: 'Align',
+      link: '/styleutilities/align'
+    },
+    {
+      title: 'Flexbox',
+      link: '/styleutilities/flexbox'
+    },
+    {
+      title: 'Grid',
+      link: '/styleutilities/grid'
+    },
+    {
+      title: 'Position',
+      link: '/styleutilities/position'
+    },
+    {
+      title: 'Spacing',
+      link: '/styleutilities/spacing'
+    },
+    {
+      title: 'Text',
+      link: '/styleutilities/text'
+    },
+    {
+      title: 'Visibility',
+      link: '/styleutilities/visibility'
+    },
+    {
+      title: 'Styles Index',
+      link: '/styleutilities/stylesindex'
+    },
   ],
   helpers: [
     {

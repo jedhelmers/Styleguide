@@ -31,6 +31,63 @@ function swatch(r){
   )
 }
 
+function colorCard(color, index){
+  return (
+    <div style={{
+    height: 140,
+    marginBottom: 10,
+    backgroundColor: `var(--${color.bcssVariable})`,
+    color: `var(--${color.fcssVariable})`,
+    border: `2px solid var(--${color.fcssVariable})`,
+    fontSize: 10,
+    borderRadius: 4,
+    padding: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'start',
+  }} key={index}>
+    <div className='flex-end-h'>
+      <div style={{
+          backgroundColor: `var(--${color.fcssVariable})`,
+          color: `var(--${color.bcssVariable})`,
+          borderRadius: 50,
+          fontSize: 8,
+          width: 25,
+          minHeight: 25,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          textAlign: 'center',
+          fontWeight: 700,
+        }}>{color.ratio}</div>
+    </div>
+
+    {color.AAA === 'pass' ? (
+        <h1 style={{ color: `var(--${color.fcssVariable})` }}>AAA: <strong>PASS</strong></h1>
+      ) : (
+        color.AA === 'pass' ? (
+          <h1 style={{ color: `var(--${color.fcssVariable})` }}>AA Large: <strong>PASS</strong></h1>
+        ) : (
+          color.AAALarge === 'pass' ? (
+            <h1 style={{ color: `var(--${color.fcssVariable})` }}>AAA Large: <strong>PASS</strong></h1>
+          ) : (
+            color.AALarge === 'pass' ? (
+              <h1 style={{ color: `var(--${color.fcssVariable})` }}>AA Large: <strong>PASS</strong></h1>
+            ) : (
+              <h1 style={{ color: `var(--${color.fcssVariable})` }}><strong>FAIL</strong></h1>
+            )
+           )
+         )
+      )}
+
+      <div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}><strong>FG: #{color.fcolor}</strong>  {color.fcssVariable}</div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}><strong>BG: #{color.bcolor}</strong>  {color.bcssVariable}</div>
+      </div>
+
+</div>)
+}
+
 export default class Color extends React.Component {
 
   constructor(props){
@@ -79,7 +136,7 @@ export default class Color extends React.Component {
 
         <Header title='Colors' classNames={[]}/>
         <div className='p20'>
-            <Heading type='h1' classNames={['mb20']}>Canonical Colors</Heading>
+            <Heading type='h1' classNames={['mb20']}>Brand Colors</Heading>
 
             <div className='grid-3 grid-row-gap-20 mb20'>
               {root.filter(f => f.type === 'canonical').map(r => (
@@ -115,12 +172,12 @@ export default class Color extends React.Component {
             <p className='mb20'>
               This is a list of color combinations of our color palette that pass WCAG 2.0 color contrast guidelines. Combinations displayed here pass either the AAA, AA, or AA Large WCAG conformance levels for contrast. AAA and AA combinations are safe to use at any type size. AA Large combinations are safe to use for large text.
               <br/><br/>
-              To meet AA Large conformance, type must be at least 24px, or 19px if bold. This standard is typically written in terms of pt units (18pt and 14pt bold, respectively), which is equivalent to the pixel sizes noted above as the ratio between pt and px is 1pt = 1.3333px.
-              <br/><br/>
-              For more details on appropriate color contrast, see the <a href='https://www.w3.org/TR/WCAG20/#visual-audio-contrast'>WCAG description</a>.
+              For more details on appropriate color contrast, see the <a target="_blank" href='https://www.w3.org/TR/WCAG20/#visual-audio-contrast'>WCAG description</a>.
             </p>
             {/* Search Filters */}
-            <form className='grid-3 grid-row-gap-10 mb20'>
+
+            <Heading type='h3' classNames={['Winblue', 'underline', 'thin', 'uppercase']}>Search</Heading>
+            <form className='grid-3 grid-row-gap-10 mb20 grid-col-gap-10 mb20 grid-3-template-columns'>
               <label className=''>Front Color:
                 <input
                   type="text"
@@ -216,59 +273,9 @@ export default class Color extends React.Component {
                     .sort((a, b) => a.ratio - b.ratio)
                     .sort((a, b) => hexToRgb(b, 'bcolor') - hexToRgb(a, 'bcolor'))
                     .map((color, index) => (
-              <div style={{
-                height: 120,
-                marginBottom: 10,
-                backgroundColor: `var(--${color.bcssVariable})`,
-                color: `var(--${color.fcssVariable})`,
-                border: `2px solid var(--${color.fcssVariable})`,
-                fontSize: 10,
-                borderRadius: 4,
-                padding: 10,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'start',
-              }} key={index}>
-                <div className='flex-end-h'>
-                  <div style={{
-                      backgroundColor: `var(--${color.fcssVariable})`,
-                      color: `var(--${color.bcssVariable})`,
-                      borderRadius: 50,
-                      fontSize: 8,
-                      width: 25,
-                      minHeight: 25,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      textAlign: 'center',
-                      fontWeight: 700,
-                    }}>{color.ratio}</div>
-                </div>
 
-                {color.AAA === 'pass' ? (
-                    <h1 style={{ color: `var(--${color.fcssVariable})` }}>AAA: <strong>PASS</strong></h1>
-                  ) : (
-                    color.AA === 'pass' ? (
-                      <h1 style={{ color: `var(--${color.fcssVariable})` }}>AA Large: <strong>PASS</strong></h1>
-                    ) : (
-                      color.AAALarge === 'pass' ? (
-                        <h1 style={{ color: `var(--${color.fcssVariable})` }}>AAA Large: <strong>PASS</strong></h1>
-                      ) : (
-                        color.AALarge === 'pass' ? (
-                          <h1 style={{ color: `var(--${color.fcssVariable})` }}>AA Large: <strong>PASS</strong></h1>
-                        ) : (
-                          <h1 style={{ color: `var(--${color.fcssVariable})` }}><strong>FAIL</strong></h1>
-                        )
-                       )
-                     )
-                  )}
+              colorCard(color, index)
 
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}><strong>FG: #{color.fcolor}</strong>  {color.fcssVariable}</div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}><strong>BG: #{color.bcolor}</strong>  {color.bcssVariable}</div>
-                  </div>
-
-            </div>
             ))}
 
           </div>

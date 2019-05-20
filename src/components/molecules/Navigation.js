@@ -33,10 +33,8 @@ export default class Navigation extends React.Component {
       <div className='nav p20'>
         {Object.keys(menu).map((key, index) => (
           <React.Fragment>
-          <ul>
-            <Link to={`/${key}`}>
-              <Heading type='h3' classNames={['clickable', 'Whitesecondary']} key={key}>{toTitleCase(key)}</Heading>
-            </Link>
+          <ul key={index}>
+            <Heading type='h3' classNames={['uppercase Whitesecondary']} key={key}>{toTitleCase(key)}</Heading>
             {menu[key].map((k, i) => (
               <li className='clickable Whitesecondary' key={i}>
                 <Link className='nav-link' to={k.link}>

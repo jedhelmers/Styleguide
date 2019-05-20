@@ -6,6 +6,13 @@ export default function Typography() {
     <React.Fragment>
       <Header title='Winsupply Pattern Library'/>
 
+      <div className="background-primary" style={{ height: 300 }}>
+        <div className='text-stroke-white' style={{ color: 'transparent', position: 'relative', top: 75, left: 20, fontSize: 172 }}>Aa</div>
+        <div style={{ position: 'relative', top: -99, height: 123, borderTop: '1px solid var(--white-help)', borderBottom: '1px solid var(--white-help)' }}></div>
+        <div style={{ position: 'relative', top: -206, height: 66, borderTop: '1px dashed var(--white-help)', borderBottom: '1px dashed var(--white-help)' }}></div>
+        <div style={{ position: 'relative', top: -220, height: 123, borderTop: '1px solid var(--white-help)'}}></div>
+      <div class="type-intro-letters"></div><div class="type-intro-lines"></div></div>
+
       <div className='p20'>
         <div className='grid-3 grid-col-gap-20 mb20 underline thicker'>
           <div className='grid-item-1'>
@@ -25,9 +32,8 @@ export default function Typography() {
           <div className='grid-item-3'>
             <Heading type='h2' classNames={['underline thin']}>Further Reading</Heading>
             <p>
-              Gotham @ Hoefler & Co.
-              Fonts In Use: Gotham
-              Know Your Type: Gotham
+              <p>License	| Apache License 2.0</p>
+              <a href='https://en.wikipedia.org/wiki/Open_Sans'>Open Sans</a>
             </p>
           </div>
         </div>
@@ -51,6 +57,28 @@ export default function Typography() {
             </p>
           </div>
         </div>
+
+
+        <Heading type='h1' classNames={[]}><div style={{ width: 200 }}>Font Utilities</div></Heading>
+        <div className='grid-2 grid-col-gap-20'>
+          <div className='grid-item-1 f12'>
+            <Heading type='h2' classNames={['underline thin mb20']}>Font Alignment</Heading>
+            <li className='bold'>.text-left</li>
+            <li className='bold'>.text-center</li>
+            <li className='bold'>.text-right</li>
+          </div>
+          <div className='grid-item-2 f12'>
+            <Heading type='h2' classNames={['underline thin mb20']}>Font Sizes</Heading>
+            <li className='bold'>.f10</li>
+            <li className='bold'>.f12</li>
+            <li className='bold'>.f14</li>
+            <li className='bold'>.f116</li>
+            <li className='bold'>.f18</li>
+            <li className='bold'>.f20</li>
+            <li className='bold'>.f24</li>
+          </div>
+        </div>
+
       </div>
     </React.Fragment>
   )

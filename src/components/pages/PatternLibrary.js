@@ -25,9 +25,9 @@ export default function Typography() {
         <Heading type='h2' classNames={['underline thick']}>Components & Usage</Heading>
 
         <div className='grid-3 grid-col-gap-20'>
-          <p className='grid-item-1'>
+          <code className='grid-item-1'>
             Explore each of the many components used to build our app, along with the design principles we use to construct them.
-          </p>
+          </code>
           <div className='grid-item-2'>
             <Heading type='h4' classNames={['underline thin uppercase']}>Guidelines</Heading>
             <p>
@@ -61,9 +61,9 @@ export default function Typography() {
         <Heading type='h2' classNames={['underline thick']}>Utilities</Heading>
 
         <div className='grid-3 grid-col-gap-20'>
-          <p className='grid-item-1'>
+          <code className='grid-item-1'>
             Beyond the components themselves, we use a variety of CSS and JS utilities. These enable us to position, space, or otherwise visually present the components in the way they’re intended to within a given flow or layout.
-          </p>
+          </code>
           <div className='grid-item-2'>
             <Heading type='h4' classNames={['underline thin uppercase']}>Style Utilities</Heading>
             <p>
