@@ -55,12 +55,135 @@ li {
   padding-top: 5px
 }
 
+button {
+  max-width: 150px;
+  border-radius: 6px;
+  padding: 0 5px;
+  flex-shrink: 0!important;
+  /* box-sizing: inherit */
+  /* box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; */
+}
+
+button:focus {
+  outline: none
+}
+
+button.primary {
+  background-color: var(--win-primary);
+  color: var(--white);
+  border: 1px solid var(--win-primary-dark)
+}
+
+button.secondary {
+  background-color: transparent;
+  color: var(--win-primary);
+  border: 1px solid var(--win-primary)
+}
+
+button.tertiary {
+  background-color: var(--win-error);
+  color: var(--white);
+  border: 1px solid var(--win-error-dark)
+}
+
+button.tertiary-o {
+  background-color: transparent;
+  color: var(--win-error);
+  border: 1px solid var(--win-error)
+}
+
+button.textOnly-winblue {
+  background-color: transparent;
+  color: var(--win-primary);
+  border: none
+}
+
+button.textOnly-error {
+  background-color: transparent;
+  color: var(--win-error);
+  border: none
+}
+
+button.rounded {
+  color: var(--win-primary);
+  background-color: var(--white);
+  border-color: var(--win-primary);
+  border-radius: 30px;
+  font-size: 16px
+}
+
+button.rounded:hover {
+  color: var(--win-primary-dark);
+  background-color: var(--white);
+  border-color: var(--win-primary-darker);
+}
+
+button.textOnly-winblue:hover {
+  background-color: transparent;
+  color: var(--win-primary-dark);
+  font-weight: 700;
+  border: none
+}
+
+button.textOnly-error:hover {
+  background-color: transparent;
+  color: var(--win-error-dark);
+  font-weight: 700;
+  border: none
+}
+
+button.primary:hover {
+  background-color: var(--win-primary-dark);
+  border: 1px solid var(--win-primary-darker);
+}
+
+button.secondary:hover {
+  background-color: rgba(0, 114, 207, .1);
+  border: 1px solid var(--win-primary-dark);
+}
+
+button.tertiary:hover {
+  background-color: var(--win-error-dark);
+  border: 1px solid var(--win-error-darker);
+}
+
+button.tertiary-o:hover {
+  background-color: rgba(204, 0, 0, .1);
+  border: 1px solid var(--win-error-darker);
+}
+
+button > span > .fa {
+  color: inherit;
+  display: inline;
+  /* font-size: inherit */
+}
+
+button.square {
+  border-radius: 0
+}
+
+button.regular {
+  height: 34px;
+  font-size: 14px
+}
+
+button.large {
+  height: 50px;
+  font-size: 18px;
+}
+
+button.disabled {
+
+}
+
 .text-stroke-white {
   -webkit-text-stroke: 1px var(--white);
 }
 
 .header {
-  width: 100%;
+  /* width: 100%; */
   height: 60px;
   background-color: var(--white);
   box-sizing: border-box;
@@ -152,7 +275,7 @@ li {
 
 .body {
   grid-area: body;
-  width: 100%;
+  /* width: 100%; */
   height: 100vh;
   background-color: var(--win-chroma-1);
   box-sizing: border-box;
@@ -194,6 +317,18 @@ li {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.grid-2-template-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3-template-columns-right {
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.grid-2-template-columns-right {
+  grid-template-columns: 1fr 2fr;
+}
+
 .grid-col-gap-5 {
   grid-column-gap: 5px
 }
@@ -224,7 +359,7 @@ tbody {
 }
 
 tfoot {
-  width: 100%;
+  /* width: 100%; */
   background-color: var(--white)
 }
 
@@ -451,6 +586,10 @@ i > .clickable:hover {
   color: var(--win-warning);
 }
 
+.Alert {
+  color: var(--win-alert);
+}
+
 input[type=text] {
   padding-left: 10px;
   height: 34px;
@@ -492,111 +631,6 @@ select {
 
 input::placeholder {
   color: var(--win-chroma-3)
-}
-
-
-.button {
-  height: 34px;
-  min-width: 100px;
-  /* max-width: 150px; */
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: inherit;
-  overflow: hidden;
-  border-radius: 6px;
-  box-sizing: border-box;
-  background-color: inherit;
-  text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
-  outline: none
-}
-
-.button-large {
-  height: 50px;
-  border-width: 2px;
-  font-size: 16px;
-}
-
-.primary {
-  background-color: var(--win-primary);
-  border: 1px solid var(--win-primary-dark);
-  color: var(--white);
-}
-
-.primary:hover {
-  background-color: var(--win-primary-dark);
-  border: 1px solid var(--win-primary-dark);
-  border-color: var(--win-primary-darker);
-}
-
-.secondary {
-  color: var(--win-primary);
-  background-color: var(--white);
-  border-color: var(--win-primary);
-}
-
-.secondary:hover {
-  color: var(--win-primary-dark);
-  background-color: var(--white);
-  border-color: var(--win-primary-darker);
-}
-
-.tertiary {
-  color: var(--win-error);
-  background-color: var(--white);
-  border-color: var(--win-error);
-}
-
-.tertiary:hover {
-  color: var(--win-error-dark);
-  background-color: var(--white);
-  border-color: var(--win-error-darker);
-}
-
-.tertiary-fill {
-  color: var(--white);
-  background-color: var(--win-error);
-  border-color: var(--win-error-dark);
-}
-
-.tertiary-fill:hover {
-  color: var(--white);
-  background-color: var(--win-error-dark);
-  border-color: var(--win-error-darker);
-}
-
-.rounded {
-  color: var(--win-primary);
-  background-color: var(--white);
-  border-color: var(--win-primary);
-  border-radius: 30px;
-}
-
-.rounded:hover {
-  color: var(--win-primary-dark);
-  background-color: var(--white);
-  border-color: var(--win-primary-darker);
-}
-
-.tertiary-cancel {
-  color: var(--win-error);
-  background-color: transparent;
-  height: 20px;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
-}
-
-.tertiary-cancel:hover {
-  color: var(--win-error-dark);
 }
 
 .underline {
@@ -758,6 +792,10 @@ i:disabled {
   font-weight: 700;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .disabled {
   opacity: .65;
   cursor: not-allowed;
@@ -793,6 +831,26 @@ i:disabled {
 
 .pl10 {
   padding: 10px;
+}
+
+.pr5 {
+  padding-right: 5px;
+}
+
+.pr10 {
+  padding-right: 10px;
+}
+
+.pr15 {
+  padding-right: 15px;
+}
+
+.pr20 {
+  padding-right: 20px;
+}
+
+.pr25 {
+  padding-right: 25px;
 }
 
 .pr30 {
@@ -941,7 +999,7 @@ i:disabled {
 
   .body {
     grid-area: body;
-    width: 100%;
+    /* width: 100%; */
     height: 100vh;
     background-color: var(--win-chroma-1)
   }

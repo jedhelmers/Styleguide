@@ -33,7 +33,7 @@ export default function Typography() {
             <Heading type='h2' classNames={['underline thin']}>Further Reading</Heading>
             <p>
               <p>License	| Apache License 2.0</p>
-              <a href='https://en.wikipedia.org/wiki/Open_Sans'>Open Sans</a>
+              <a target='_blank' href='https://en.wikipedia.org/wiki/Open_Sans'>Open Sans</a>
             </p>
           </div>
         </div>

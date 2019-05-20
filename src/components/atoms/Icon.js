@@ -14,7 +14,7 @@ export const Icon = props => {
       className={[
         'fa',
         `fa-${icon}`,
-        ...classNames,
+        classNames.join(' '),
         typeof size === 'string' && `icon-${size}`
       ].join(' ')}
 
