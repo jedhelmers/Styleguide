@@ -79,6 +79,25 @@ export default function Typography() {
           </div>
         </div>
 
+        <Heading type='h1' classNames={['']}><div style={{ width: 200 }}>Scaling</div></Heading>
+
+        <Heading type='h3' classNames={['Winblue underline uppercase thin']}><div style={{ width: 200 }}>Standard</div></Heading>
+        <Heading type='h1' classNames={[]}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h2' classNames={[]}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h3' classNames={[]}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h4' classNames={['mb20']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+
+        <Heading type='h3' classNames={['Winblue underline uppercase thin']}><div style={{ width: 200 }}>Uppercase</div></Heading>
+        <Heading type='h1' classNames={['uppercase']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h2' classNames={['uppercase']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h3' classNames={['uppercase']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h4' classNames={['uppercase', 'mb20']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+
+        <Heading type='h3' classNames={['Winblue underline uppercase thin']}><div style={{ width: 200 }}>Underlines</div></Heading>
+        <Heading type='h1' classNames={['underline', 'thin']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h2' classNames={['underline', 'thin']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h3' classNames={['underline', 'thin']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
+        <Heading type='h4' classNames={['underline', 'thin', 'mb20']}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>
       </div>
     </React.Fragment>
   )

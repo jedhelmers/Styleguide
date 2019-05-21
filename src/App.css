@@ -178,6 +178,65 @@ button.disabled {
 
 }
 
+label {
+  font-weight: 700;
+  color: var(--win-primary-text);
+}
+
+label.idle {
+  position: relative;
+  top: 30px;
+  left: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--win-help)
+}
+
+label.in {
+  position: relative;
+  -webkit-animation-name: label-animation; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .5s; /* Safari 4.0 - 8.0 */
+  animation-name: label-animation;
+  animation-duration: .5s;
+  font-weight: 700;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+label.out {
+  position: relative;
+  -webkit-animation-name: label-animation; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .5s; /* Safari 4.0 - 8.0 */
+  animation-name: label-animation-o;
+  animation-duration: .5s;
+  color: var(--win-help);
+  /* animation-direction: reverse; */
+  animation-fill-mode: both;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes label-animation {
+  0%   {left:0px; top:30px; font-size: 16px; font-weight: 400}
+  100% {left:0px; top:0px; font-size: 13px; font-weight: 700; color: var(--win-primary-text)}
+}
+
+/* Standard syntax */
+@keyframes label-animation {
+  0%   {left:0px; top:30px; font-size: 16px; font-weight: 400}
+  100%   {left:0px; top:0px; font-size: 13px; font-weight: 700; color: var(--win-primary-text)}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes label-animation-o {
+  100%   {left:0px; top:30px; font-size: 16px; font-weight: 400}
+  0% {left:0px; top:0px; font-size: 13px; font-weight: 700; color: var(--win-primary-text)}
+}
+
+/* Standard syntax */
+@keyframes label-animation-o {
+  100%   {left:0px; top:30px; font-size: 16px; font-weight: 400}
+  0%   {left:0px; top:0px; font-size: 13px; font-weight: 700; color: var(--win-primary-text)}
+}
+
 .text-stroke-white {
   -webkit-text-stroke: 1px var(--white);
 }
@@ -591,20 +650,38 @@ i > .clickable:hover {
 }
 
 input[type=text] {
-  padding-left: 10px;
   height: 34px;
   width: 100%;
-  background-color: var(--white);
-  border: 1px solid var(--win-chroma-3);
+  border-style: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--win-chroma-4);
   color: var(--win-primary-text);
-  font-size: 13px;
+  font-size: 14px;
   border-radius: 2px;
   display: flex;
   text-align: left;
-  display: block;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  z-index: 1;
+  outline: none;
+}
+
+input[type=password] {
+  height: 34px;
+  width: 100%;
+  border-style: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--win-chroma-4);
+  color: var(--win-primary-text);
+  font-size: 14px;
+  border-radius: 2px;
+  display: flex;
+  text-align: left;
+  z-index: 1;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border-bottom: 2px solid var(--win-primary);
+  background-color: rgba(255, 255, 255, .5);
 }
 
 input[type=text].error {
@@ -703,6 +780,13 @@ input::placeholder {
   flex-wrap: wrap;
 }
 
+.flex-reverse-v {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse;
+  justify-content: flex-start;
+}
+
 button:disabled {
   cursor: not-allowed;
   opacity: .65;
@@ -722,6 +806,10 @@ i:disabled {
 
 .background-white {
   background-color: var(--white);
+}
+
+.background-white-help {
+  background-color: var(--white-help);
 }
 
 .background-chroma-1 {
@@ -895,6 +983,10 @@ i:disabled {
 
 .mb40 {
   margin-bottom: 40px;
+}
+
+.mt4 {
+  margin-top: 4px;
 }
 
 .mt5 {

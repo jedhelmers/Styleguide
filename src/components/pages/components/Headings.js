@@ -159,7 +159,7 @@ export default class Headings extends React.Component {
                 key={index}
                 item={item}
                 str={`<Heading type='${item.type}' classNames={['${item.classNames.join("', '")}']}>\n\tThe quick funky wizards leap over vases\n</Heading>`}
-                func={<Heading type={item.type} classNames={item.classNames}>The quick funky wizards leap over vases</Heading>}
+                func={<Heading type={item.type} classNames={item.classNames}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>}
               />
             ))}
           </div>

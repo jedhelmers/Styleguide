@@ -10,37 +10,37 @@ const headingList = [
   {
     type: 'pencil',
     classNames: ['Secondary', 'bold', 'uppercase'],
-    size: "'xxlg'"
+    size: 'xxlg'
   },
   {
     type: 'undelete',
     classNames: ['clickable', 'Winblue'],
-    size: "'xlg'"
+    size: 'xlg'
   },
   {
     type: 'trash-unavailable',
     classNames: ['Alert'],
-    size: "'lg'"
+    size: 'lg'
   },
   {
     type: 'scan-gun',
     classNames: ['Warning'],
-    size: "'md'"
+    size: 'md'
   },
   {
     type: 'commodity-pricing1',
     classNames: [],
-    size: "'sl'"
+    size: 'sl'
   },
   {
     type: 'soe',
     classNames: [],
-    size: "'xsl'"
+    size: 'xsl'
   },
   {
     type: 'receiving',
     classNames: [],
-    size: "'xxsl'"
+    size: 'xxsl'
   },
   {
     type: 'purchasing',
@@ -118,7 +118,7 @@ export default class Icons extends React.Component {
               <Markup
                 key={index}
                 item={item}
-                str={`<Icon icon='${item.type}' \n\tclassNames={['${item.classNames.join("', '")}']} \n\tsize=${item.size}\n/>`}
+                str={`<Icon icon='${item.type}' \n\tclassNames={['${item.classNames.join("', '")}']} \n\tsize='${item.size}'\n/>`}
                 func={<Icon icon={item.type} classNames={item.classNames} size={item.size}/>}
               />
             ))}
