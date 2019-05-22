@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heading } from '../../atoms/Heading'
+import { Field } from '../../atoms/Field'
 import { Header } from '../components/Header'
 import { getColors } from '../../../utils/accessibilitycolors'
 import { hexToRgb } from '../../../utils/helpers'
@@ -178,6 +179,8 @@ export default class Color extends React.Component {
 
             <Heading type='h3' classNames={['Winblue', 'underline', 'thin', 'uppercase']}>Search</Heading>
             <form className='grid-3 grid-row-gap-10 mb20 grid-col-gap-10 mb20 grid-3-template-columns'>
+              <Field name={'fsearch'} onChange={this.handleInputChange} onBlur={''} onFocus={''} required={''} type={'text'} value={this.state.search}>Test Field</Field>
+
               <label className=''>Front Color:
                 <input
                   type="text"

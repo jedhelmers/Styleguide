@@ -1,5 +1,6 @@
 import React from 'react'
 import { Heading } from '../components/atoms/Heading'
+import { Icon } from '../components/atoms/Icon'
 
 export const toTitleCase = (camelCase) => camelCase
   .replace(/([A-Z])/g, (match) => ` ${match}`)
@@ -29,7 +30,7 @@ export const Markup = props => {
   return (
     <React.Fragment>
     <div style={{ display: 'flex' }} className='underline thin'>
-      <Heading type='h3' classNames={['uppercase', 'Help']}>{item.type} {typeof item.classNames !== 'undefined' ? item.classNames.join(' ') : ''}</Heading>
+      <Heading type='h3' classNames={['Help']}>{toTitleCase(item.type)} {typeof item.classNames !== 'undefined' ? item.classNames.join(' ') : ''}</Heading>
     </div>
     <div className='background-chroma-2 p10 border'>
       {func}
@@ -42,9 +43,18 @@ export const Markup = props => {
       </pre>
     </div>
 
-    <Heading type='h3' classNames={['uppercase', 'Help', 'underline thin']}>Heading type H1 details</Heading>
+    <Heading type='h3' classNames={['Help', 'underline thin']}>Meta</Heading>
     <p className=''><strong>Size: </strong>{isNumberSize(item.size)}</p>
     <p className='mb30'><strong>ClassNames: </strong>{isEmptyArray(item.classNames)}</p>
     </React.Fragment>
   )
+}
+
+export const FieldStatus = props => {
+  let { error, name } = props
+  return (
+    <div className='flex-spacebetween'>
+      <Icon icon='close2' classNames={[error]} size='md'/>
+      <p className={error}>Please enter a valid {toTitleCase(name)}</p>
+    </div>)
 }

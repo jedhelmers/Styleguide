@@ -6,7 +6,8 @@ export const Icon = props => {
     icon,
     focusable,
     classNames,
-    size
+    size,
+    styles = []
   } = props
 
   return (
@@ -18,7 +19,7 @@ export const Icon = props => {
         typeof size === 'string' && `icon-${size}`
       ].join(' ')}
 
-      style={typeof size === 'number' ? { fontSize: size } : {}}
+      style={typeof size === 'number' ? { fontSize: size } : {}, styles}
     />
   )
 }

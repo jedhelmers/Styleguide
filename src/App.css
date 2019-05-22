@@ -1,5 +1,9 @@
 @import 'https://s3.amazonaws.com/wincdn/css/winsupply-icon-library.css';
 
+/* * {
+  background-color: rgba(220, 0, 0, .1)
+} */
+
 html, body {
   font-family: 'Open sans';
   font-size: 13px
@@ -195,9 +199,9 @@ label.idle {
 label.in {
   position: relative;
   -webkit-animation-name: label-animation; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: .5s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .25s; /* Safari 4.0 - 8.0 */
   animation-name: label-animation;
-  animation-duration: .5s;
+  animation-duration: .25s;
   font-weight: 700;
   animation-direction: normal;
   animation-fill-mode: forwards;
@@ -206,9 +210,9 @@ label.in {
 label.out {
   position: relative;
   -webkit-animation-name: label-animation; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: .5s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .25s; /* Safari 4.0 - 8.0 */
   animation-name: label-animation-o;
-  animation-duration: .5s;
+  animation-duration: .25s;
   color: var(--win-help);
   /* animation-direction: reverse; */
   animation-fill-mode: both;
@@ -480,36 +484,35 @@ td {
 }
 
 .thin {
-  border-width: 1px
+  border-width: 1px!important
 }
 
 .thick {
-  border-width: 2px;
+  border-width: 2px!important;
 }
 
 .thicker {
-  border-width: 3px;
+  border-width: 3px!important;
 }
 
 .border-bottom {
-  border-bottom: 1px solid var(--win-chroma-3)
+  border-bottom: 1px solid var(--win-chroma-3)!important
 }
 
 .border-top {
-  border-top: 1px solid var(--win-chroma-3)
+  border-top: 1px solid var(--win-chroma-3)!important
 }
 
 .border-bottom-thick {
-  border-bottom: 2px solid var(--win-chroma-3)
+  border-bottom: 2px solid var(--win-chroma-3)!important
 }
 
 .border-top-thick {
-  border-top: 2px solid var(--win-chroma-3)
+  border-top: 2px solid var(--win-chroma-3)!important
 }
 
 .border-left-thick {
-  /* border-left: 10px solid var(--win-primary) */
-  border-left: 16px solid rgba(var(--win-primary-rgb), .65)
+  border-left: 16px solid rgba(var(--win-primary-rgb), .65)!important
 }
 
 .round-left {
@@ -538,6 +541,10 @@ td {
 
 .border-white {
   border-color: var(--white)
+}
+
+.border-success {
+  border-color: var(--success)
 }
 
 .border-top-clear {
@@ -649,15 +656,18 @@ i > .clickable:hover {
   color: var(--win-alert);
 }
 
+.Success {
+  color: var(--win-success)
+}
+
 input[type=text] {
   height: 34px;
   width: 100%;
   border-style: none;
   background-color: transparent;
-  border-bottom: 1px solid var(--win-chroma-4);
   color: var(--win-primary-text);
   font-size: 14px;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   display: flex;
   text-align: left;
   z-index: 1;
@@ -669,7 +679,6 @@ input[type=password] {
   width: 100%;
   border-style: none;
   background-color: transparent;
-  border-bottom: 1px solid var(--win-chroma-4);
   color: var(--win-primary-text);
   font-size: 14px;
   border-radius: 2px;
@@ -680,13 +689,70 @@ input[type=password] {
 }
 
 input[type=text]:focus {
-  border-bottom: 2px solid var(--win-primary);
-  background-color: rgba(255, 255, 255, .5);
 }
 
 input[type=text].error {
-  border: 2px solid var(--win-error);
   background-color: rgba(204, 0, 0, .2)
+}
+
+input[type=checkbox] {
+  box-sizing: border-box;
+  position: absolute!important;
+  overflow: hidden!important;
+  width: 1px!important;
+  height: 1px!important;
+  padding: 0!important;
+  border: 0!important;
+  clip: rect(1px,1px,1px,1px)!important;
+}
+
+.input-checkbox {
+  border-radius: 4px;
+  border: 1px solid var(--win-success-dark);
+  display: block;
+  padding: 0 5px 0 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.input-checkbox>i {
+  color: var(--white);
+  position: relative;
+  top: -10px
+}
+
+input>span>div>i {
+  color: pink;
+}
+
+.input-checkbox {
+  background-color: var(--win-primary);
+  border-color: var(--win-primary-dark)
+}
+
+.input-checkBox:active>i{
+  color: var(--white)
+}
+
+.field-wrapper {
+  border-bottom: 2px solid var(--win-chroma-4);
+}
+
+.field-wrapper-focus {
+  border-bottom: 2px solid var(--win-primary);
+}
+
+.field-wrapper-error {
+  border-bottom: 2px solid var(--win-error);
+}
+
+.field-wrapper-warning {
+  border-bottom: 2px solid var(--win-warning);
+}
+
+.field-wrapper-alert {
+  border-bottom: 2px solid var(--win-alert);
 }
 
 select {
@@ -787,6 +853,13 @@ input::placeholder {
   justify-content: flex-start;
 }
 
+.flex-reverse-space-v {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse;
+  justify-content: space-between;
+}
+
 button:disabled {
   cursor: not-allowed;
   opacity: .65;
@@ -850,6 +923,10 @@ i:disabled {
 
 .background-error {
   background-color: var(--win-error);
+}
+
+.background-success {
+  background-color: var(--win-success);
 }
 
 .border {

@@ -14,7 +14,7 @@ export default function Typography() {
       <div class="type-intro-letters"></div><div class="type-intro-lines"></div></div>
 
       <div className='p20'>
-        <div className='grid-3 grid-col-gap-20 mb20 underline thicker'>
+        <div className='grid-3 grid-col-gap-20 mb20'>
           <div className='grid-item-1'>
             <Heading type='h2' classNames={['underline thin']}>Typeface</Heading>
             <p>
@@ -38,6 +38,65 @@ export default function Typography() {
           </div>
         </div>
 
+        {/* COLORS */}
+        <Heading type='h2' classNames={['underline thin']}>Text & Utility</Heading>
+        <p>
+          Sometimes we need to change the color or format (bold, italic, etc) of certain pieces of text or icons outside of their normal colors. Using the following utility classes will allow you to define colors as needed. The class <strong className='Error'>.Error</strong> is probably the most common use of this, while the others are used sparingly.
+        </p>
+        <div className='grid-3 grid-col-gap-20 grid-row-gap-20 mb20'>
+          <div className=''>
+            <Heading type='h3' classNames={['Winblue underline thin uppercase']}>Primary Text</Heading>
+            <p>
+              <p><strong>Primary Color Text</strong></p>
+              Uses the class <strong>.Winblue</strong>. Uses the color <strong className='Winblue'>#0072cf</strong>.
+            </p>
+          </div>
+          <div className=''>
+            <Heading type='h3' classNames={['Error underline thin uppercase']}>Error</Heading>
+            <p>
+              <p><strong>Error Text</strong></p>
+              Uses the class <strong>.Error</strong>. Uses the color <strong className='Error'>#cc0000</strong>.
+            </p>
+          </div>
+          <div className=''>
+            <Heading type='h3' classNames={['Alert underline thin uppercase']}>Alert</Heading>
+            <p>
+              <p><strong>Alert Text</strong></p>
+              Uses the class <strong>.Alert</strong>. Uses the color <strong className='Alert'>#d8c726</strong>.
+            </p>
+          </div>
+          <div className=''>
+            <Heading type='h3' classNames={['Warning underline thin uppercase']}>Warning Text</Heading>
+            <p>
+              <p><strong>Warning Color Text</strong></p>
+              Uses the class <strong>.Warning</strong>. Uses the color <strong className='Warning'>#e28f3e</strong>.
+            </p>
+          </div>
+          <div className=''>
+            <Heading type='h3' classNames={['Success underline thin uppercase']}>Success</Heading>
+            <p>
+              <p><strong>Success Text</strong></p>
+              Uses the class <strong>.Success</strong>. Uses the color <strong className='Success'>#668741</strong>.
+            </p>
+          </div>
+          <div className=''>
+            <Heading type='h3' classNames={['Primary underline thin uppercase']}>Primary</Heading>
+            <p>
+              <p><strong>Primary Text</strong></p>
+              Uses the class <strong>.Primary</strong>. Uses the color <strong className='Primary'>rgba(0, 0, 0, .78)</strong>.
+            </p>
+          </div>
+          <div className=''>
+            <Heading type='h3' classNames={['Help underline thin uppercase']}>Help</Heading>
+            <p>
+              <p><strong>Help Text</strong></p>
+              Uses the class <strong>.Help</strong>. Uses the color <strong className='Help'>rgba(0, 0, 0, .35)</strong>.
+            </p>
+          </div>
+        </div>
+
+        {/* EXAMPLES */}
+        <Heading type='h1' classNames={['underline thick uppercase']}>Emphasis</Heading>
         <div className='grid-3 grid-col-gap-20'>
           <div className='grid-item-1'>
             <Heading type='h3' classNames={[]}><div style={{ width: 200 }}>Specimen</div></Heading>
