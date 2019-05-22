@@ -707,33 +707,118 @@ input[type=checkbox] {
 }
 
 .input-checkbox {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.input-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
   border-radius: 4px;
-  border: 1px solid var(--win-success-dark);
+  background-color: var(--win-chroma-1);
+  border: 2px solid var(--win-primary);
   display: block;
-  padding: 0 5px 0 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 
-.input-checkbox>i {
-  color: var(--white);
-  position: relative;
-  top: -10px
+/* On mouse-over, add a grey background color */
+.input-checkbox:hover input ~ .checkmark {
+  background-color: var(--win-hover);
 }
 
-input>span>div>i {
-  color: pink;
-}
-
-.input-checkbox {
+/* When the checkbox is checked, add a blue background */
+.input-checkbox input:checked ~ .checkmark {
   background-color: var(--win-primary);
-  border-color: var(--win-primary-dark)
+  border-color: var(--win-primary-dark);
+  border-width: 1px
 }
 
-.input-checkBox:active>i{
-  color: var(--white)
+/* Create the checkmark/indicator (hidden when not checked) */
+.input-checkbox>i:after {
+  content: "";
+  position: absolute;
+  display: none;
 }
+
+.input-checkbox>i {
+  color: white
+}
+
+/* Show the checkmark when checked */
+.input-checkbox input:checked ~ .input-checkbox>i:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.input-checkbox .input-checkbox>i:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  color: transparent;
+  /* border-width: 0 3px 3px 0; */
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.input-checkbox>i:before {
+  -webkit-animation-name: check-animation; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .25s; /* Safari 4.0 - 8.0 */
+  animation-name: check-animation;
+  animation-duration: .25s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+.input-checkbox>i:after {
+  -webkit-animation-name: check-animation; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .25s; /* Safari 4.0 - 8.0 */
+  animation-name: check-animation;
+  animation-duration: .25s;
+  animation-direction: reverse;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes check-animation {
+  0% {font-size: 2px}
+  75% {font-size: 18px}
+  90% {font-size: 15px}
+  100% {font-size: 16px}
+}
+
+@keyframes check-animation {
+  0% {font-size: 2px}
+  75% {font-size: 18px}
+  90% {font-size: 15px}
+  100% {font-size: 16px}
+}
+
+
 
 .field-wrapper {
   border-bottom: 2px solid var(--win-chroma-4);

@@ -7,7 +7,9 @@ export const Icon = props => {
     focusable,
     classNames,
     size,
-    styles = []
+    styles = [],
+    onClick,
+    name = ''
   } = props
 
   return (
@@ -18,8 +20,9 @@ export const Icon = props => {
         classNames.join(' '),
         typeof size === 'string' && `icon-${size}`
       ].join(' ')}
-
+      name={name}
       style={typeof size === 'number' ? { fontSize: size } : {}, styles}
+      onClick={onClick}
     />
   )
 }

@@ -64,7 +64,6 @@ export class Field extends React.Component {
         </div>
         {error !== '' && (
           <Icon icon='exclamation-triangle' classNames={[error]} size='md' styles={{ paddingTop: 10 }}/>
-
         )}
       </div>
       {error !== '' && (
@@ -76,17 +75,11 @@ export class Field extends React.Component {
 }
 
 export const CheckBox = props => {
+  let { name, classNames, children, checked } = props
   return (
-    <div className="react-live-preview">
-      <label className="option option--checkbox">
-        <input type="checkbox" className="option__input hiddenVisually"/>
-          <span style={{ display: 'flex' }}>
-            <div className={["input-checkbox border-success"].join(' ')} style={{ height: 20, width: 20 }}>
-              <Icon icon='check2' classNames={[]} size='sl' styles={{ paddingTop: 10 }}/>
-            </div>
-            <div className="flex-spacebetween-v"><p className="ml5">CheckBox</p></div>
-        </span>
-      </label>
-    </div>
+    <p name={name} className="input-checkbox"  onClick={(e) => props.onChange(e, name)}>{children}
+      <input name={name} type="checkbox" checked={checked}/>
+      <Icon name={name} icon={[checked && 'check2']} classNames={['checkmark']} size='sl'/>
+    </p>
   )
 }

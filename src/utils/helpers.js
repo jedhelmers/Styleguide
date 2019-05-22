@@ -2,15 +2,23 @@ import React from 'react'
 import { Heading } from '../components/atoms/Heading'
 import { Icon } from '../components/atoms/Icon'
 
+export function realHexToRgb(hex){
+  hex = parseInt(hex.replace(/^#/, ''), 16)
+  var r = hex >> 16;
+  var g = hex >> 8 & 0xFF;
+  var b = hex & 0xFF;
+  return [r,g,b];
+}
+
 export const toTitleCase = (camelCase) => camelCase
   .replace(/([A-Z])/g, (match) => ` ${match}`)
   .replace(/^./, (match) => match.toUpperCase());
 
-export function hexToRgb(hex, type) {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex[type]);
-      const x = result ? (parseInt(result[1], 16) + parseInt(result[2], 16) + parseInt(result[3], 16)) : null
-      return x;
-  }
+export function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const x = result ? (parseInt(result[1], 16) + parseInt(result[2], 16) + parseInt(result[3], 16)) : null
+  return x;
+}
 
 export const isEmptyArray = (arry = []) => {
   return arry.length > 0 ? `.${arry.join(' .')}` : <span className='Help italic'>None</span>

@@ -3,7 +3,7 @@ import { Heading } from '../../atoms/Heading'
 import { Icon } from '../../atoms/Icon'
 import { Field, CheckBox } from '../../atoms/Field'
 import { Header } from '../components/Header'
-import { Markup } from '../../../utils/helpers'
+import { Markup, hexToRgb, realHexToRgb } from '../../../utils/helpers'
 import Prism from "prismjs"
 import '../../../utils/markup.css'
 
@@ -60,13 +60,27 @@ function clicked(){
 export default class Forms extends React.Component {
   constructor(props){
     super(props)
-    this.state = {}
+    this.state = {
+      checkbox1: true
+    }
 
     this.anotherAction = this.anotherAction.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
+  }
+
+  handleInputChange(event, nameIn) {
+    const target = event.target
+    const name = typeof nameIn === 'undefined' ? target.name : nameIn
+    const value = target.type === 'checkbox' ? !this.state[name] : target.value
+
+    this.setState({
+      [name]: !this.state[name]
+    })
+    console.log('FORMS: ', event.target, this.state[name], nameIn, name)
   }
 
   componentDidMount() {
-    Prism.highlightAll();
+    Prism.highlightAll()
   }
 
   anotherAction = () => {
@@ -74,10 +88,12 @@ export default class Forms extends React.Component {
   }
 
   render(){
+    let { checkbox1 } = this.state
     return (
       <React.Fragment>
       <Header title='Forms' classNames={[]}/>
       <div className='p20'>
+        Butts{console.log(realHexToRgb('#0072cf'))}
         <Heading type='h1' classNames={['underline thick']}>Forms</Heading>
         <div className='grid-2 grid-col-gap-20 grid-row-gap-20'>
           <div className='grid-item-1'>
@@ -117,7 +133,7 @@ export default class Forms extends React.Component {
               <Icon icon='check2' classNames={['Help', 'p5']} size='sm'/>
               <Heading type='h3' classNames={['uppercase', 'Help']}>CheckBox</Heading>
             </div>
-            <CheckBox/>
+            <CheckBox name={'checkbox1'} checked={checkbox1} onChange={this.handleInputChange}>Checkbox</CheckBox>
 
             <div style={{ display: 'flex' }} className='underline thin mt10'>
               <Icon icon='i-cursor' classNames={['Help', 'p5']} size='sm'/>
