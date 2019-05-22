@@ -1,7 +1,7 @@
 import React from 'react';
 import { Heading } from '../../atoms/Heading'
 import { Icon } from '../../atoms/Icon'
-import { Field } from '../../atoms/Field'
+import { Field, CheckBox } from '../../atoms/Field'
 import { Header } from '../components/Header'
 import { Markup } from '../../../utils/helpers'
 import Prism from "prismjs"
@@ -9,14 +9,15 @@ import '../../../utils/markup.css'
 
 let formList = [
   {
-    name: 'username',
+    name: 'userName',
     onChange: 'shorter hair',
     onBlur: '',
     onFocus: '',
     required: true,
     type: 'text',
     value: 'hot',
-    children: 'Username',
+    error: 'Error',
+    children: <div className='flex-start-h'><Icon icon='user' classNames={['Help', 'pr5']} size='sl'/>Username</div>,
   },
   {
     name: 'firstName',
@@ -26,7 +27,8 @@ let formList = [
     required: false,
     type: 'text',
     value: '',
-    children: 'First Name',
+    error: 'Warning',
+    children: <div className='flex-start-h'><Icon icon='scan-gun' classNames={['pr5']} size='md'/>Scan or Enter location</div>,
   },
   {
     name: 'lastName',
@@ -36,6 +38,7 @@ let formList = [
     required: false,
     type: 'text',
     value: '',
+    error: 'Alert',
     children: 'Last Name',
   },
   {
@@ -47,29 +50,7 @@ let formList = [
     type: 'password',
     value: '',
     children: 'Password',
-  },
-  [
-    {
-      name: 'password',
-      onChange: '',
-      onBlur: '',
-      onFocus: '',
-      required: false,
-      type: 'password',
-      value: '',
-      children: 'Password',
-    },
-    {
-      name: 'password',
-      onChange: '',
-      onBlur: '',
-      onFocus: '',
-      required: false,
-      type: 'password',
-      value: '',
-      children: 'Password',
-    },
-  ]
+  }
 ]
 
 function clicked(){
@@ -77,8 +58,19 @@ function clicked(){
 }
 
 export default class Forms extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {}
+
+    this.anotherAction = this.anotherAction.bind(this)
+  }
+
   componentDidMount() {
     Prism.highlightAll();
+  }
+
+  anotherAction = () => {
+    alert('Butt')
   }
 
   render(){
@@ -122,22 +114,29 @@ export default class Forms extends React.Component {
 
           <div className='grid-item-2'>
             <div style={{ display: 'flex' }} className='underline thin'>
-              <Icon icon='user' classNames={['Help', 'p5']} size='sm'/>
+              <Icon icon='check2' classNames={['Help', 'p5']} size='sm'/>
+              <Heading type='h3' classNames={['uppercase', 'Help']}>CheckBox</Heading>
+            </div>
+            <CheckBox/>
+
+            <div style={{ display: 'flex' }} className='underline thin mt10'>
+              <Icon icon='i-cursor' classNames={['Help', 'p5']} size='sm'/>
               <Heading type='h3' classNames={['uppercase', 'Help']}>Text Field</Heading>
             </div>
+
             {formList.map((item, index) => (
 
               <Markup
                 key={index}
                 item={item}
-                str={`<Field\n\tname={'${item.name}'}\n\tonChange={'${item.onChange}'}\n\tonBlur={'${item.onBlur}'}\n\tonFocus={'${item.onFocus}'}\n\trequired={'${item.required}'}\n\ttype={'${item.type}'}\n\tvalue={'${item.value}'}\n>\n\t{'${item.children}'}\n</Field>`}
-                func={<Field name={item.name} onChange={item.onChange} onBlur={item.onBlur} onFocus={item.onFocus} required={item.required} type={item.type} value={item.value}>{item.children}</Field>}
+                str={`<Field\n\terror={${item.error}}\n\tname={'${item.name}'}\n\tonChange={'${item.onChange}'}\n\tonBlur={'${item.onBlur}'}\n\tonFocus={'${item.onFocus}'}\n\trequired={'${item.required}'}\n\ttype={'${item.type}'}\n\tvalue={'${item.value}'}\n>\n\t{'${item.children}'}\n</Field>`}
+                func={<Field error={item.error} name={item.name} onChange={item.onChange} onBlur={item.onBlur} onFocus={item.onFocus} required={item.required} type={item.type} value={item.value}>{item.children}</Field>}
               />
 
             ))}
 
             <div className='grid-2 grid-col-gap-20 '>
-              <Field name={'name'}>Address</Field>
+              <Field name={'name'} onBlur={[() => this.anotherAction()]}>Address</Field>
               <Field name={'name'}>State</Field>
             </div>
           </div>
