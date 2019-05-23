@@ -45,16 +45,16 @@ export default function Typography() {
             <p>
               Each of these React components comes with its own set of properties and modifications.
             </p>
-            <li><Link to=''>Headings</Link></li>
-            <li><Link to=''>Icons</Link></li>
-            <li><Link to=''>Buttons</Link></li>
-            <li><Link to=''>Forms</Link></li>
-            <li><Link to=''>Content Layout</Link></li>
-            <li><Link to=''>Page Layout</Link></li>
-            <li><Link to=''>Layout Utilities</Link></li>
-            <li><Link to=''>Navigation</Link></li>
-            <li><Link to=''>ThemeContext</Link></li>
-            <li><Link to=''>Misc.</Link></li>
+            <li><Link to='/components/headings'>Headings</Link></li>
+            <li><Link to='/components/icons'>Icons</Link></li>
+            <li><Link to='/components/buttons'>Buttons</Link></li>
+            <li><Link to='/components/forms'>Forms</Link></li>
+            <li><Link to='/components/'>Content Layout</Link></li>
+            <li><Link to='/components/'>Page Layout</Link></li>
+            <li><Link to='/components/layoututilities'>Layout Utilities</Link></li>
+            <li><Link to='/components/'>Navigation</Link></li>
+            <li><Link to='/components/'>ThemeContext</Link></li>
+            <li><Link to='/components/'>Misc.</Link></li>
           </div>
         </div>
 

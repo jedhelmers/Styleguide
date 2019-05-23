@@ -179,67 +179,69 @@ export default class Color extends React.Component {
 
             <Heading type='h3' classNames={['Winblue', 'underline', 'thin', 'uppercase']}>Search</Heading>
             <form className='grid-3 grid-row-gap-10 mb20 grid-col-gap-10 mb20 grid-3-template-columns'>
-              <Field name={'fsearch'} onChange={this.handleInputChange} onBlur={''} onFocus={''} required={''} type={'text'} value={this.state.search}>Test Field</Field>
+              <Field
+                name={'fsearch'}
+                onChange={this.handleInputChange}
+                type={'text'}
+                value={this.state.search}
+              >
+                Front Color
+              </Field>
 
-              <label className=''>Front Color:
-                <input
-                  type="text"
-                  name='fsearch'
-                  id="filter"
-                  value={this.state.search}
-                  onChange={this.handleInputChange}
-                />
-              </label>
+              <Field
+                name={'bsearch'}
+                onChange={this.handleInputChange}
+                type={'text'}
+                value={this.state.search}
+              >
+                Back Ground Color
+              </Field>
 
-              <label className=''>BG Color:
-                <input
-                  type="text"
-                  name='bsearch'
-                  id="filter"
-                  value={this.state.search}
-                  onChange={this.handleInputChange}
-                />
-              </label>
+              <Field
+                name={'asearch'}
+                onChange={this.handleInputChange}
+                type={'text'}
+                value={this.state.search}
+              >
+                All Colors
+              </Field>
 
-              <label className=''>All Colors:
-                <input
-                  type="text"
-                  name='asearch'
-                  id="filter"
-                  value={this.state.search}
-                  onChange={this.handleInputChange}
-                />
-              </label>
+              <Field
+                name={'fcssv'}
+                onChange={this.handleInputChange}
+                type={'text'}
+                value={this.state.search}
+              >
+                Front Variable
+              </Field>
 
-              <label className=''>Front Variables:
-                <input
-                  type="text"
-                  name='fcssv'
-                  id="filter"
-                  value={this.state.search}
-                  onChange={this.handleInputChange}
-                />
-              </label>
+              <Field
+                name={'bcssv'}
+                onChange={this.handleInputChange}
+                type={'text'}
+                value={this.state.search}
+              >
+                Background Variable
+              </Field>
 
-              <label className=''>BG Variables:
-                <input
-                  type="text"
-                  name='bcssv'
-                  id="filter"
-                  value={this.state.search}
-                  onChange={this.handleInputChange}
-                />
-              </label>
+              <Field
+                name={'acssv'}
+                onChange={this.handleInputChange}
+                type={'text'}
+                value={this.state.search}
+              >
+                All Variables
+              </Field>
 
-              <label className=''>All Variables:
-                <input
-                  type="text"
-                  name='acssv'
-                  id="filter"
-                  value={this.state.search}
-                  onChange={this.handleInputChange}
-                />
-              </label>
+              <Field
+                name={'value'}
+                id="filter"
+                onChange={this.handleInputChange}
+                type={'text'}
+                value={this.state.value}
+              >
+                Contrast Ratio
+              </Field>
 
               <label className='flex-center'>Ratio:
                 <input
@@ -265,7 +267,7 @@ export default class Color extends React.Component {
             </form>
 
 
-          <div className='grid-3 grid-col-gap-10'>
+          <div className='grid-3 grid-col-gap-10' style={{ minHeight: 300 }}>
             {colors.filter(item1 => item1.ratio >= this.state.value)
                 .filter(item2 => item2.fcolor.toUpperCase().includes(this.state.fsearch.toUpperCase()))
                 .filter(item3 => item3.fcssVariable.includes(this.state.fcssv))

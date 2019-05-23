@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import { Heading } from './components/atoms/Heading'
 import PatternLibrary from './components/pages/PatternLibrary'
 import Navigation from './components/molecules/Navigation'
@@ -13,6 +13,7 @@ import Headings from './components/pages/components/Headings'
 import Icons from './components/pages/components/Icons'
 import Buttons from './components/pages/components/Buttons'
 import Forms from './components/pages/components/Forms'
+import LayoutUtilities from './components/pages/components/LayoutUtilities'
 import ContentLayout from './components/pages/components/ContentLayout'
 import PageLayout from './components/pages/components/PageLayout'
 import { Icon } from './components/atoms/Icon'
@@ -61,10 +62,14 @@ function App() {
       <Route path='/components/pagelayout' render={() => (
         <PageLayout/>
       )}/>
+      <Route path='/components/layoututilities' render={() => (
+        <LayoutUtilities/>
+      )}/>
 
       <Route path='/styleutilities/flexbox' render={() => (
         <Flexbox/>
       )}/>
+
       </div>
     </div>
   )

@@ -10,7 +10,6 @@ import '../../../utils/markup.css'
 let formList = [
   {
     name: 'userName',
-    onChange: 'shorter hair',
     onBlur: '',
     onFocus: '',
     required: true,
@@ -70,13 +69,13 @@ export default class Forms extends React.Component {
 
   handleInputChange(event, nameIn) {
     const target = event.target
-    const name = typeof nameIn === 'undefined' ? target.name : nameIn
+    const name = typeof target.name !== 'undefined' ? target.name : nameIn
     const value = target.type === 'checkbox' ? !this.state[name] : target.value
 
     this.setState({
       [name]: !this.state[name]
     })
-    console.log('FORMS: ', event.target, this.state[name], nameIn, name)
+    console.log('FORMS: ', name)
   }
 
   componentDidMount() {
@@ -93,7 +92,6 @@ export default class Forms extends React.Component {
       <React.Fragment>
       <Header title='Forms' classNames={[]}/>
       <div className='p20'>
-        Butts{console.log(realHexToRgb('#0072cf'))}
         <Heading type='h1' classNames={['underline thick']}>Forms</Heading>
         <div className='grid-2 grid-col-gap-20 grid-row-gap-20'>
           <div className='grid-item-1'>
@@ -133,8 +131,12 @@ export default class Forms extends React.Component {
               <Icon icon='check2' classNames={['Help', 'p5']} size='sm'/>
               <Heading type='h3' classNames={['uppercase', 'Help']}>CheckBox</Heading>
             </div>
-            <CheckBox name={'checkbox1'} checked={checkbox1} onChange={this.handleInputChange}>Checkbox</CheckBox>
-
+            <Markup
+              key={1}
+              item={{ name: 'CheckBox', type: 'CheckBox'}}
+              str={`<CheckBox \n\tname={'checkbox1'} \n\tchecked={checkbox1} \n\tonChange={this.handleInputChange}\n>\n\tCheckbox\n</CheckBox>`}
+              func={<CheckBox name={'checkbox1'} checked={checkbox1} onChange={this.handleInputChange}>Checkbox</CheckBox>}
+            />
             <div style={{ display: 'flex' }} className='underline thin mt10'>
               <Icon icon='i-cursor' classNames={['Help', 'p5']} size='sm'/>
               <Heading type='h3' classNames={['uppercase', 'Help']}>Text Field</Heading>
@@ -146,7 +148,7 @@ export default class Forms extends React.Component {
                 key={index}
                 item={item}
                 str={`<Field\n\terror={${item.error}}\n\tname={'${item.name}'}\n\tonChange={'${item.onChange}'}\n\tonBlur={'${item.onBlur}'}\n\tonFocus={'${item.onFocus}'}\n\trequired={'${item.required}'}\n\ttype={'${item.type}'}\n\tvalue={'${item.value}'}\n>\n\t{'${item.children}'}\n</Field>`}
-                func={<Field error={item.error} name={item.name} onChange={item.onChange} onBlur={item.onBlur} onFocus={item.onFocus} required={item.required} type={item.type} value={item.value}>{item.children}</Field>}
+                func={<Field error={item.error} name={item.name} onChange={(e) => this.handleInputChange(e, item.name)} onBlur={item.onBlur} onFocus={item.onFocus} required={item.required} type={item.type} value={item.value}>{item.children}</Field>}
               />
 
             ))}

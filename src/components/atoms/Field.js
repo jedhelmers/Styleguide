@@ -25,6 +25,7 @@ export class Field extends React.Component {
   }
 
   changeHandler = (e) => {
+    this.props.onChange(e, this.props.name)
     this.setState({
       valueInternal: e.target.value
     })
@@ -48,7 +49,7 @@ export class Field extends React.Component {
     return (
       <React.Fragment>
 
-      <div className={[focused !== 'idle' && 'thicker border-primary', 'flex-spacebetween mb10 field-wrapper', focused === 'in' && 'field-wrapper-focus', error && `field-wrapper-${error.toLowerCase()}`].join(' ')} style={{ height: 55 }}>
+      <div className={[focused !== 'idle' && 'border-primary', 'flex-spacebetween mb10 field-wrapper', focused === 'in' && 'field-wrapper-focus', error && `field-wrapper-${error.toLowerCase()}`].join(' ')} style={{ height: 55 }}>
         <div className='flex-reverse-v' style={{ width: '100%' }}>
           <input
             type={type}

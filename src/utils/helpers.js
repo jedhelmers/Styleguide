@@ -38,7 +38,7 @@ export const Markup = props => {
   return (
     <React.Fragment>
     <div style={{ display: 'flex' }} className='underline thin'>
-      <Heading type='h3' classNames={['Help']}>{toTitleCase(item.type)} {typeof item.classNames !== 'undefined' ? item.classNames.join(' ') : ''}</Heading>
+      <Heading type='h3' classNames={['Winblue']}>{toTitleCase(item.type)} {typeof item.classNames !== 'undefined' ? item.classNames.join(' ') : ''}</Heading>
     </div>
     <div className='background-chroma-2 p10 border'>
       {func}
