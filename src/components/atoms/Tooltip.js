@@ -5,19 +5,20 @@ export const ToolTip = props => {
   let {
     title,
     subtitle,
-    children
+    children,
+    light = true
   } = props
 
   return (
     <div >
       <div>
         {typeof title !== 'undefined' && (
-          <Heading type='h3' classNames={['White']}>{title}</Heading>
+          <Heading type='h3' classNames={[light ? 'White' : 'Chroma8']}>{title}</Heading>
         )}
         {typeof subtitle !== 'undefined' && (
-          <Heading type='h4' classNames={['uppercase']}>{subtitle}</Heading>
+          <Heading type='h4' classNames={[light ? 'White' : 'Chroma8', 'uppercase']}>{subtitle}</Heading>
         )}
-        <p>
+        <p className={[light ? 'White' : 'Chroma8']}>
           {children}
         </p>
       </div>

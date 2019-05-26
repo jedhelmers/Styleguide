@@ -134,7 +134,7 @@ export default class Forms extends React.Component {
             <Markup
               key={1}
               item={{ name: 'CheckBox', type: 'CheckBox'}}
-              str={`<CheckBox \n\tname={'checkbox1'} \n\tchecked={checkbox1} \n\tonChange={this.handleInputChange}\n>\n\tCheckbox\n</CheckBox>`}
+              str={`import { CheckBox } from '@jedhelmers/stylesheet/src/components/atoms/Field'\n\n<CheckBox \n\tname={'checkbox1'} \n\tchecked={checkbox1} \n\tonChange={this.handleInputChange}\n>\n\tCheckbox\n</CheckBox>`}
               func={<CheckBox name={'checkbox1'} checked={checkbox1} onChange={this.handleInputChange}>Checkbox</CheckBox>}
             />
             <div style={{ display: 'flex' }} className='underline thin mt10'>
@@ -147,7 +147,7 @@ export default class Forms extends React.Component {
               <Markup
                 key={index}
                 item={item}
-                str={`<Field\n\terror={${item.error}}\n\tname={'${item.name}'}\n\tonChange={'${item.onChange}'}\n\tonBlur={'${item.onBlur}'}\n\tonFocus={'${item.onFocus}'}\n\trequired={'${item.required}'}\n\ttype={'${item.type}'}\n\tvalue={'${item.value}'}\n>\n\t{'${item.children}'}\n</Field>`}
+                str={`import { Field } from '@jedhelmers/stylesheet/src/components/atoms/Field'\n\n<Field\n\terror={${item.error}}\n\tname={'${item.name}'}\n\tonChange={'${item.onChange}'}\n\tonBlur={'${item.onBlur}'}\n\tonFocus={'${item.onFocus}'}\n\trequired={'${item.required}'}\n\ttype={'${item.type}'}\n\tvalue={'${item.value}'}\n>\n\t{'${item.children}'}\n</Field>`}
                 func={<Field error={item.error} name={item.name} onChange={(e) => this.handleInputChange(e, item.name)} onBlur={item.onBlur} onFocus={item.onFocus} required={item.required} type={item.type} value={item.value}>{item.children}</Field>}
               />
 

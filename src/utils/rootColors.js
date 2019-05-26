@@ -87,7 +87,7 @@ let rootColors = [
     title: 'Black',
     variable: '--black',
     value: '#000000',
-    type: 'canonical'
+    type: 'gray'
   },
   {
     title: 'Hover',

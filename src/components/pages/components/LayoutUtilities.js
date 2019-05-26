@@ -11,7 +11,7 @@ export default function ContentLayout() {
     <React.Fragment>
     <Header title='Content Layout' classNames={[]}/>
     <div className='p20'>
-      <Heading type='h1' classNames={['underline thick']}>Content Layout</Heading>
+      <Heading type='h1' classNames={['underline thick']}>Layout Utilities</Heading>
 
       <div className='tooltiptext' onClick={() => <ToolTip >close2</ToolTip>}>
         <div className={['tooltip']} onClick={''}>

@@ -10,6 +10,28 @@ export function realHexToRgb(hex){
   return [r,g,b];
 }
 
+export function dbToCamelCase(str){
+    str = (str.toLowerCase()).replace(/_([a-z])/g, function (m, w) {
+        return w.toUpperCase()
+    })
+    return str
+}
+
+export function camelCaseToDb(str){
+  return str.split(/(?=[A-Z])/).join('_').toUpperCase()
+}
+
+export function grabKeyFromObject(item, key) {
+  let x = item[key].split(', ')
+  x = x.map(y => arryToObject(y))
+  return x
+}
+
+export function arryToObject(item) {
+  const arry = new Map([item.split(': ')])
+  return {...Object.fromEntries(arry)}
+}
+
 export const toTitleCase = (camelCase) => camelCase
   .replace(/([A-Z])/g, (match) => ` ${match}`)
   .replace(/^./, (match) => match.toUpperCase());
@@ -26,6 +48,12 @@ export const isEmptyArray = (arry = []) => {
 
 export const isNumberSize = (txt) => {
   return typeof txt === 'number' ? `${txt}px` : txt
+}
+
+export function generateUID() {
+  return (
+    Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+  )
 }
 
 export const Markup = props => {

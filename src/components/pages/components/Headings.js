@@ -119,7 +119,7 @@ export default class Headings extends React.Component {
     return (
       <React.Fragment>
       <Header title='Headings' classNames={[]}/>
-      <div className='p20'>
+      <div className='p20 scrollable'>
         <Heading type='h1' classNames={['underline thick']}>Headings</Heading>
         <div className='grid-2 grid-col-gap-20 grid-2-template-columns-right'>
           <div className='grid-item-1'>
@@ -158,7 +158,7 @@ export default class Headings extends React.Component {
               <Markup
                 key={index}
                 item={item}
-                str={`<Heading type='${item.type}' classNames={['${item.classNames.join("', '")}']}>\n\tThe quick funky wizards leap over vases\n</Heading>`}
+                str={`import { Heading } from '@jedhelmers/stylesheet/src/components/atoms/Heading'\n\n<Heading type='${item.type}' classNames={['${item.classNames.join("', '")}']}>\n\tThe quick funky wizards leap over vases\n</Heading>`}
                 func={<Heading type={item.type} classNames={item.classNames}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>}
               />
             ))}

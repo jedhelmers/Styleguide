@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Icon } from './Icon'
 import { toTitleCase, FieldStatus } from '../../utils/helpers'
 
-export class Field extends React.Component {
+
+export class Field extends Component<{}> {
   constructor(props){
     super(props)
     this.state = {
@@ -15,7 +16,7 @@ export class Field extends React.Component {
   }
 
   actionHandler = (direction, func = []) => {
-    console.log('FUNC: ', func)
+    // console.log('FUNC: ', func)
     for(let i = 0; i < func.length; i++){
       func[i].call()
     }
@@ -25,7 +26,7 @@ export class Field extends React.Component {
   }
 
   changeHandler = (e) => {
-    this.props.onChange(e, this.props.name)
+    // this.props.onChange(e, this.props.name)
     this.setState({
       valueInternal: e.target.value
     })
@@ -41,7 +42,8 @@ export class Field extends React.Component {
       value,
       required = false,
       type = 'text',
-      error = ''
+      error = '',
+      dark = false
     } = this.props
 
     let { focused, valueInternal } = this.state
@@ -55,13 +57,14 @@ export class Field extends React.Component {
             type={type}
             name={name}
             value={valueInternal}
+            style={dark ? { color: 'var(--white)'} : {}}
             className={[focused ? 'mt4' : ''].join(' ')}
             onChange={(e) => this.changeHandler(e)}
             onFocus={() => focused && this.actionHandler('in')}
             onBlur={() => this.actionHandler('out', onBlur)}
             autocomplete="off"
           />
-          <label className={[valueInternal === '' ? focused : '']}>{children}</label>
+          <label className={[valueInternal === '' ? focused : ''].join(' ')}>{children}</label>
         </div>
         {error !== '' && (
           <Icon icon='exclamation-triangle' classNames={[error]} size='md' styles={{ paddingTop: 10 }}/>

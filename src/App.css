@@ -193,7 +193,7 @@ label.idle {
   left: 0;
   font-size: 16px;
   font-weight: 400;
-  color: var(--win-secondary)
+  color: var(--win-help)
 }
 
 label.in {
@@ -334,6 +334,10 @@ label.out {
 .nav-mobile {
   visibility: hidden;
   height: 0
+}
+
+.scrollable {
+  overflow: scroll;
 }
 
 .body {
@@ -527,31 +531,35 @@ td {
   border-radius: 4px
 }
 
-.border-warning {
+.border-warning !important {
   border-color: var(--win-warning)
 }
 
-.border-error {
+.border-error !important {
   border-color: var(--win-error)
 }
 
-.border-chroma-3 {
+.border-chroma-3 !important {
   border-color: var(--win-chroma-3)
 }
 
-.border-primary {
+.border-primary !important {
   border-color: var(--win-primary)
 }
 
-.border-alert {
+.border-alert !important {
   border-color: var(--win-alert)
 }
 
-.border-white {
+.border-white !important {
   border-color: var(--white)
 }
 
-.border-success {
+.border-black !important {
+  border-color: var(--black)
+}
+
+.border-success !important {
   border-color: var(--success)
 }
 
@@ -621,6 +629,14 @@ i > .clickable:hover {
 
 .White {
   color: var(--white);
+}
+
+.Chroma8 {
+  color: var(--win-chroma-8);
+}
+
+.Black {
+  color: var(--black);
 }
 
 .Whitesecondary {
@@ -1253,7 +1269,7 @@ i:disabled {
   left: 50%;
   margin-left: -60px;
   opacity: 0;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .tooltip .tooltiptext::after {
@@ -1272,6 +1288,13 @@ i:disabled {
   opacity: 1;
 }
 
+.truncate {
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* .tooltiptext>.arrow{
   position: ;
   left: -18px;
@@ -1284,6 +1307,12 @@ i:disabled {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 } */
+
+.box-size {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 
 @media (max-width: 1024px) {
   .styleguide {
