@@ -15,8 +15,8 @@
   --win-secondary-text: rgba(0, 0, 0, .6);
   --win-help: rgba(0, 0, 0, .35);
   --black: #000000;
-  --win-hover: rgba(0, 114, 207, .1);
-  --win-select: #cfe9ff;
+  --win-hover: rgba(0, 114, 207, .15);
+  --win-select: rgba(0, 114, 207, .3);
   --win-select-odd: #c4ddf2;
   --win-primary: #0072cf;
   --win-primary-rgb: 0, 114, 207;

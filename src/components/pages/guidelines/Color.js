@@ -131,7 +131,7 @@ export default class Color extends React.Component {
   render(){
     let { colors, root } = this.state
 
-    console.log('COLORS', root)
+    // console.log('COLORS', root)
     return (
       <React.Fragment>
 

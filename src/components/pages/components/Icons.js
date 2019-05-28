@@ -282,10 +282,10 @@ const Device = props => {
     <div style={{ width: Number.parseInt(width, 10)/6, height: Number.parseInt(height, 10)/6 }} className={['box-size m10 border background-white rounded border']}>
       <div className='box-size tooltip pink border rounded border-black p5' style={{ opacity: .75, width: Number.parseInt(browserwidth, 10)/6, height: Number.parseInt(browserheight, 10)/6, position: '' }}>
         <ToolTip light={false}><label className={['tooltiptext']}>.{system}</label></ToolTip>
-        <label className='f10'>S. Width: {Number.parseInt(width, 10)}</label><br/>
-        <label className='f10'>S. Height: {Number.parseInt(height, 10)}</label><br/>
-        <label className='f10'>Br. Width: {Number.parseInt(browserwidth, 10)}</label><br/>
-        <label className='f10'>Br. Height: {Number.parseInt(browserheight, 10)}</label>
+        <label className='f10'>S. W: {Number.parseInt(width, 10)}</label>
+        <label className='f10'>S. H: {Number.parseInt(height, 10)}</label>
+        <label className='f10'>Br. W: {Number.parseInt(browserwidth, 10)}</label>
+        <label className='f10'>Br. H: {Number.parseInt(browserheight, 10)}</label>
         <p className='f10 truncate'>{system.substr(0, system.indexOf(')') + 1)}...</p>
       </div>
     </div>
@@ -293,6 +293,16 @@ const Device = props => {
 }
 
 export default class Icons extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      apple: true,
+      chrome: true,
+      safari: true,
+
+    }
+  }
+
   componentDidMount() {
     Prism.highlightAll()
     let str = 'BUTTS_MCGOO'
@@ -311,12 +321,13 @@ export default class Icons extends React.Component {
   }
 
   render() {
-
+    let { apple, safari, chrome } = this.state
     return (
       <React.Fragment>
       <Header title='Icons' classNames={[]}/>
       <div style={{ display: 'flex', flexWrap: 'wrap' }} className='p10'>
-        {/*filteredList.sort((a, b) => Object.values(a)[0].screenHeight - Object.values(b)[0].screenHeight).map(item => <Device browserwidth={Object.values(item)[0].browserInnerWidth} browserheight={Object.values(item)[0].browserInnerHeight} width={Object.values(item)[0].screenWidth} height={Object.values(item)[0].screenHeight} system={Object.values(item)[0].system}/>)*/}
+        {filteredList.filter(item => Object.values(item)[0].system.includes('iPhone') || Object.values(item)[0].system.includes('iPad') || Object.values(item)[0].system.includes('SAMSUNG'))
+          .sort((a, b) => Object.values(a)[0].screenHeight - Object.values(b)[0].screenHeight).map(item => <Device browserwidth={Object.values(item)[0].browserInnerWidth} browserheight={Object.values(item)[0].browserInnerHeight} width={Object.values(item)[0].screenWidth} height={Object.values(item)[0].screenHeight} system={Object.values(item)[0].system}/>)}
       </div>
       <div className='p20'>
         <Heading type='h1' classNames={['underline thick']}>Icons</Heading>

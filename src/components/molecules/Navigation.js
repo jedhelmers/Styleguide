@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Router } from 'react-router'
 import { Icon } from '../atoms/Icon'
 import { Heading } from '../atoms/Heading'
 import { Field } from '../atoms/Field'
@@ -7,15 +8,32 @@ import { getMenuItems } from '../../utils/menu'
 import { toTitleCase, generateUID } from '../../utils/helpers'
 
 let getMenu = getMenuItems()
-let selectedPage = {index: '', i: ''}
+let selectedPage = null
+let mobileOpen = true
+
+const Element = (props) => {
+  let {
+    type,
+    className = [],
+    actions = '',
+    children
+  } = props
+
+  return React.createElement(
+    type,
+    {
+      className: className,
+      onClick: actions
+    },
+    ...children
+  )
+}
 
 getMenu = Object.values(getMenu).map(
   item => Object.keys(item)
     .map(key => ({open: true, section: key, options: Object.values(item[key]).map(i => ({...i, selected: false}))})
   )
 )
-
-// console.log(getMenu)
 
 export default class Navigation extends React.Component {
 
@@ -52,6 +70,8 @@ export default class Navigation extends React.Component {
 
   linkSelectionHandler(index, i){
     let val = !getMenu[index][0].options[i].selected
+    console.log(getMenu)
+
     return {
       ...getMenu,
       [index]: {
@@ -64,49 +84,77 @@ export default class Navigation extends React.Component {
   }
 
   boolHandler(index, i){
+    {/* TODO: finsish up UI selection stuff */}
     this.linkSelectionHandler(index, i)
-    // this.linkSelectionHandler(selectedPage.index, selectedPage.i)
     selectedPage = {index: index, i: i}
+    this.forceUpdate()
+  }
+
+  openMobileMenu(){
+    mobileOpen = !mobileOpen
     this.forceUpdate()
   }
 
   render() {
     let { menu } = this.state
-    // console.log(getMenu, selectedPage)
+    console.log()
+
     return (
       <React.Fragment>
+      <Element
+        type='h1'
+        className='clickable Winblue'
+        actions={() => alert('Howdy!')}
+      >
+        Element
+      </Element>
       <div className='navMobile flex-spacebetween p20'>
         <Icon icon='arrow_back' classNames={['clickable', 'White']} size={'lg'}/>
-        <Icon icon='bars' classNames={['clickable', 'White']} size={'lg'}/>
+        <Icon icon='bars' classNames={['clickable', 'White']} size={'lg'} onClick={() => this.openMobileMenu()}/>
       </div>
-      <div className='nav p20 scrollable'>
-        <Field
-          name='search'
-          classNames={['']}
-          onChange={''}
-          dark={true}
-        >
-          <div className={['White flex-start-h']}>
-            <Icon icon='search' classNames={['clickable', 'White', 'pr5' ]} size={'sl'}/>
-            Search
+      {
+        mobileOpen && (
+          <div className='nav scrollable pt10'>
+            <Field
+              name='search'
+              classNames={['mr10', 'ml10']}
+              onChange={''}
+              dark={true}
+            >
+              <div className={['White flex-start-h']}>
+                <Icon icon='search' classNames={['clickable', 'White', 'pr5' ]} size={'sl'}/>
+                Search
+              </div>
+            </Field>
+            {getMenu.map((item, index) => (
+              <React.Fragment>
+              <ul className={['clickable']} key={generateUID()}>
+                <Heading type='h3' classNames={['uppercase Whitesecondary']} key={''} index={index}>
+                  <div className='flex-spacebetween' onClick={() => this.actionHandler(index)}>
+                    {toTitleCase(item[0].section)}
+                    <Icon icon={[item[0].open ? 'angle-down' : 'angle-right']} classNames={['clickable', 'White', 'pr5' ]} size={'sl'}/>
+                  </div>
+                </Heading>
+                {item[0].open && item[0].options.map((i, j) => (
+                  <li className={['clickable Whitesecondary nav-link', i.selected && 'selected'].join(' ')} key={generateUID()}>
+                    <Link className={['White'].join(' ')} to={i.link} onClick={() => this.boolHandler(index, j)}>
+                      {`${i.title}`}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              </React.Fragment>
+            ))
+            }
+            <div className={['White flex-start-h', 'p20 clickable'].join(' ')} style={{ borderTop: '1px solid var(--win-chroma-3)' }}>
+              <Icon icon='sign-out' classNames={['White' ]} size={'sl'}/>
+              <label className={['White pl10 clickable']}>Logout</label>
+            </div>
           </div>
-        </Field>
-        {getMenu.map((item, index) => (
-          <React.Fragment>
-          <ul className={['clickable']} key={generateUID()}>
-            <Heading type='h3' classNames={['uppercase Whitesecondary']} key={''} index={index}><span onClick={() => this.actionHandler(index)}>{toTitleCase(item[0].section)}</span></Heading>
-            {item[0].open && item[0].options.map((i, j) => (
-              <li className='clickable Whitesecondary' key={generateUID()}>
-                <Link className={['nav-link', i.selected && 'disabled'].join(' ')} to={i.link} onClick={() => this.boolHandler(index, j)}>
-                  {`${i.title}`}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          </React.Fragment>
-        ))
-        }
-      </div>
+        )
+      }
+
       </React.Fragment>
     )
   }

@@ -11,7 +11,9 @@ export const Heading = props => {
   return (
     React.createElement (
       type,
-      {className: classNames.join(' ')},
+      {
+        className: classNames.join(' ')
+      },
       [children]
     )
   )

@@ -1,7 +1,6 @@
 import React from 'react'
-// import styles from 'https://s3.amazonaws.com/wincdn/css/winsupply-icon-library.css'
 
-export const Icon = props => {
+export const Icon = (props) => {
   let {
     icon,
     focusable,
@@ -12,21 +11,15 @@ export const Icon = props => {
     name = ''
   } = props
 
-  return (
-    <i
-      className={[
-        'fa',
-        `fa-${icon}`,
-        classNames.join(' '),
-        typeof size === 'string' && `icon-${size}`
-      ].join(' ')}
-      name={name}
-      style={typeof size === 'number' ? { fontSize: size } : {}, styles}
-      onClick={onClick}
-    />
+  return React.createElement(
+    'i',
+    {
+      className: [`fa fa-${icon} ${classNames.join(' ')} ${typeof size === 'string' && `icon-${size}`}`],
+      onClick: onClick,
+      style: typeof size === 'number' ? { fontSize: size } : {}
+    },
   )
 }
-
 /*
 icon sizes:
 

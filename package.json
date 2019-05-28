@@ -1,6 +1,6 @@
 {
   "name": "@jedhelmers/styleguide",
-  "version": "0.2.8",
+  "version": "0.2.10",
   "private": false,
   "dependencies": {
     "prism": "^4.1.2",
