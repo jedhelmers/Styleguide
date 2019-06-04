@@ -1,8 +1,10 @@
 import React from 'react'
 import { Heading } from '../../atoms/Heading'
+import { Label } from '../../atoms/Label'
+import { Link } from '../../atoms/Link'
 import { Icon } from '../../atoms/Icon'
 import { Header } from '../components/Header'
-import { Markup } from '../../../utils/helpers'
+import { Markup, toTitleCase } from '../../../utils/helpers'
 import Prism from "prismjs"
 import '../../../utils/markup.css'
 
@@ -109,6 +111,26 @@ const headingList = [
   },
 ]
 
+const labelList = [
+  {
+    type: 'label',
+    classNames: [],
+    action: () => alert(),
+    children: '',
+    size: ''
+  }
+]
+
+const linkList = [
+  {
+    type: 'standard hyperlink',
+    classNames: [],
+    action: () => alert(),
+    children: '',
+    size: ''
+  }
+]
+
 export default class Headings extends React.Component {
   componentDidMount() {
     Prism.highlightAll();
@@ -120,6 +142,76 @@ export default class Headings extends React.Component {
       <React.Fragment>
       <Header title='Headings' classNames={[]}/>
       <div className='p20 scrollable'>
+
+      {/* Labels */}
+      <Heading type='h1' classNames={['underline thin']}>Labels</Heading>
+      <div className='grid-2 grid-col-gap-20 grid-2-template-columns-right'>
+        <div className='grid-item-1'>
+          <div style={{ display: 'flex' }} className='underline thin'>
+            <Icon icon='pencil' classNames={['Help', 'p5']} size='sm'/>
+            <Heading type='h3' classNames={['uppercase', 'Help']}>Notes</Heading>
+          </div>
+          <p>
+            Labels are typically 13px and Title-Case and are defaulted to <span className='White background-chroma-7 bold pl5 pr5 rounded'>var(--win-primary-text)</span>. Add text utility classes to adjust. A label is often paired with input fields. It is also used extensively in Table Headers. Ultimately, use them when and where you need 'em. Go nuts... or not.
+          </p>
+          <br/>
+          <div style={{ display: 'flex' }} className='underline thin'>
+            <Icon icon='bullseye' classNames={['Help', 'p5']} size='sm'/>
+            <Heading type='h3' classNames={['uppercase', 'Help']}>Properties</Heading>
+          </div>
+          <p className=''><span className='bold'>Children: </span>node</p>
+          <p className=''><span className='bold'>Class Names: </span>array</p>
+          <p className=''><span className='bold'>Action: </span>array
+          </p>
+        </div>
+
+        <div className='grid-item-2'>
+          {labelList.map((item, index) => (
+            <Markup
+              key={index}
+              item={item}
+              str={`<Label \n\tclassName={['${item.classNames.join(' ')}'].join(' ')} \n\taction={${item.action}}\n>\n\ {toTitleCase(${toTitleCase(item.type)})}\n</Label>`}
+              func={<Label className={[item.classNames.join(' ')]} action={item.action}>{toTitleCase(item.type)}</Label>}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Links */}
+      <Heading type='h1' classNames={['underline thin']}>Links</Heading>
+      <div className='grid-2 grid-col-gap-20 grid-2-template-columns-right'>
+        <div className='grid-item-1'>
+          <div style={{ display: 'flex' }} className='underline thin'>
+            <Icon icon='pencil' classNames={['Help', 'p5']} size='sm'/>
+            <Heading type='h3' classNames={['uppercase', 'Help']}>Notes</Heading>
+          </div>
+          <p>
+            Labels are typically 13px and Title-Case and are defaulted to <span className='White background-primary bold pl5 pr5 rounded'>var(--win-primary)</span>. Add text utility classes to adjust. A label is often paired with input fields. It is also used extensively in Table Headers. Ultimately, use them when and where you need 'em. Go nuts... or not.
+          </p>
+          <br/>
+          <div style={{ display: 'flex' }} className='underline thin'>
+            <Icon icon='bullseye' classNames={['Help', 'p5']} size='sm'/>
+            <Heading type='h3' classNames={['uppercase', 'Help']}>Properties</Heading>
+          </div>
+          <p className=''><span className='bold'>Children: </span>node</p>
+          <p className=''><span className='bold'>Class Names: </span>array</p>
+          <p className=''><span className='bold'>Action: </span>array
+          </p>
+        </div>
+
+        <div className='grid-item-2'>
+          {linkList.map((item, index) => (
+            <Markup
+              key={index}
+              item={item}
+              str={`<Link \n\tto='' \n\taction={''} \n\tclassName={[].join(' ')}>\n\{${toTitleCase(item.type)}}\n</Link>`}
+              func={<Link to='' action={''} className={[].join(' ')}>{toTitleCase(item.type)}</Link>}
+            />
+          ))}
+        </div>
+      </div>
+
+
         <Heading type='h1' classNames={['underline thick']}>Headings</Heading>
         <div className='grid-2 grid-col-gap-20 grid-2-template-columns-right'>
           <div className='grid-item-1'>
@@ -143,12 +235,12 @@ export default class Headings extends React.Component {
               <Icon icon='bullseye' classNames={['Help', 'p5']} size='sm'/>
               <Heading type='h3' classNames={['uppercase', 'Help']}>Properties</Heading>
             </div>
-            <p className=''><strong>Children: </strong>node</p>
-            <p className=''><strong>Class Names: </strong>array</p>
-            <p className=''><strong>Sizes: </strong>
+            <p className=''><span className='bold'>Children: </span>node</p>
+            <p className=''><span className='bold'>Class Names: </span>array</p>
+            <p className=''><span className='bold'>Sizes: </span>
               Select One(32px, 24px, 16px, 13px)
             </p>
-            <p className=''><strong>Type: </strong>
+            <p className=''><span className='bold'>Type: </span>
               Select One(h1, h2, h3, h4)
             </p>
           </div>

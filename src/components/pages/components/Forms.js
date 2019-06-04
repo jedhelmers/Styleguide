@@ -1,7 +1,9 @@
 import React from 'react';
 import { Heading } from '../../atoms/Heading'
 import { Icon } from '../../atoms/Icon'
-import { Field, CheckBox } from '../../atoms/Field'
+import { Field } from '../../atoms/Field'
+import { Select } from '../../atoms/Select'
+import { CheckBox } from '../../atoms/CheckBox'
 import { Header } from '../components/Header'
 import { Markup, hexToRgb, realHexToRgb } from '../../../utils/helpers'
 import Prism from "prismjs"
@@ -49,6 +51,19 @@ let formList = [
     type: 'password',
     value: '',
     children: 'Password',
+  }
+]
+
+let selectionList = [
+  {
+    name: 'userName',
+    onBlur: '',
+    onFocus: '',
+    required: true,
+    type: 'text',
+    value: 'hot',
+    error: 'Error',
+    children: <div className='flex-start-h'><Icon icon='user' classNames={['Help', 'pr5']} size='sl'/>Username</div>,
   }
 ]
 
@@ -159,6 +174,7 @@ export default class Forms extends React.Component {
             </div>
           </div>
         </div>
+
       </div>
       </React.Fragment>
     )

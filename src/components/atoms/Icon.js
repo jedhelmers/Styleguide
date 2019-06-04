@@ -22,14 +22,7 @@ export const Icon = (props) => {
 }
 /*
 icon sizes:
-
-xxlg
-xlg
-lg
-md
-sl
-xsl
-xxsl
+'xxlg', 'xlg', 'lg', 'md', 'sl', 'xsl', 'xxsl'
 
 You can also pump in a raw number for font size
 */

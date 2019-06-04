@@ -1,4 +1,4 @@
-@import 'https://s3.amazonaws.com/wincdn/css/winsupply-icon-library.css';
+@import 'https://s3.us-east-2.amazonaws.com/winuiux/framer/Resources/IcoMoon_1/style.css';
 
 /* * {
   background-color: rgba(220, 0, 0, .1)
@@ -1143,6 +1143,10 @@ i:disabled {
 
 .p5 {
   padding: 5px;
+}
+
+.pl5 {
+  padding-left: 5px;
 }
 
 .pl10 {

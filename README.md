@@ -2,6 +2,12 @@
 
 This Design System was created as the single source of truth between design and development. The components here-in shall be used in both Development and the Pattern Library. Therefore, shall changes be made in Design, projects will be able to pull changes from npm.
 
+## Setup
+
+To launch the referenceable Pattern Library:
+1. Add this to a new page: `import App from '@jedhelmers/styleguide/src/App'`
+2. Return `<App/>`... or something like that. I've never done this but in theory...
+
 ## Use
 
 1. To use, simply run `npm i @jedhelmers/styleguide` in terminal.

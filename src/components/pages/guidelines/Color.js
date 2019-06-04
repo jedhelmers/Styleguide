@@ -183,7 +183,7 @@ export default class Color extends React.Component {
                 name={'fsearch'}
                 onChange={this.handleInputChange}
                 type={'text'}
-                value={this.state.search}
+                value={this.state.fsearch}
               >
                 Front Color
               </Field>
@@ -192,7 +192,7 @@ export default class Color extends React.Component {
                 name={'bsearch'}
                 onChange={this.handleInputChange}
                 type={'text'}
-                value={this.state.search}
+                value={this.state.bsearch}
               >
                 Back Ground Color
               </Field>
@@ -201,7 +201,7 @@ export default class Color extends React.Component {
                 name={'asearch'}
                 onChange={this.handleInputChange}
                 type={'text'}
-                value={this.state.search}
+                value={this.state.asearch}
               >
                 All Colors
               </Field>
@@ -210,7 +210,7 @@ export default class Color extends React.Component {
                 name={'fcssv'}
                 onChange={this.handleInputChange}
                 type={'text'}
-                value={this.state.search}
+                value={this.state.fcssv}
               >
                 Front Variable
               </Field>
@@ -219,7 +219,7 @@ export default class Color extends React.Component {
                 name={'bcssv'}
                 onChange={this.handleInputChange}
                 type={'text'}
-                value={this.state.search}
+                value={this.state.bcssv}
               >
                 Background Variable
               </Field>
@@ -228,7 +228,7 @@ export default class Color extends React.Component {
                 name={'acssv'}
                 onChange={this.handleInputChange}
                 type={'text'}
-                value={this.state.search}
+                value={this.state.acssv}
               >
                 All Variables
               </Field>
@@ -242,16 +242,6 @@ export default class Color extends React.Component {
               >
                 Contrast Ratio
               </Field>
-
-              <label className='flex-center'>Ratio:
-                <input
-                  type="text"
-                  id="filter"
-                  name='value'
-                  value={this.state.value}
-                  onChange={this.handleInputChange}
-                />
-              </label>
 
               <label className='flex-center'>Ratio Slider:
                 <input

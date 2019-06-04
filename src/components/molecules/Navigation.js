@@ -101,13 +101,6 @@ export default class Navigation extends React.Component {
 
     return (
       <React.Fragment>
-      <Element
-        type='h1'
-        className='clickable Winblue'
-        actions={() => alert('Howdy!')}
-      >
-        Element
-      </Element>
       <div className='navMobile flex-spacebetween p20'>
         <Icon icon='arrow_back' classNames={['clickable', 'White']} size={'lg'}/>
         <Icon icon='bars' classNames={['clickable', 'White']} size={'lg'} onClick={() => this.openMobileMenu()}/>

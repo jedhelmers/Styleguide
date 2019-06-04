@@ -16,6 +16,8 @@ import Forms from './components/pages/components/Forms'
 import LayoutUtilities from './components/pages/components/LayoutUtilities'
 import ContentLayout from './components/pages/components/ContentLayout'
 import PageLayout from './components/pages/components/PageLayout'
+import ScreenResolutions from './components/pages/helpers/ScreenResolutions'
+
 import { Icon } from './components/atoms/Icon'
 import './App.css';
 import './stylesheets/root.css'
@@ -70,6 +72,9 @@ function App() {
         <Flexbox/>
       )}/>
 
+      <Route path='/helpers/screenresolutions' render={() => (
+        <ScreenResolutions/>
+      )}/>
       </div>
     </div>
   )

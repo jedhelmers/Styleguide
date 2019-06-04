@@ -102,8 +102,8 @@ let menu = [
   {
     helpers: [
       {
-        title: '',
-        link: ''
+        title: 'Screen Resolutions',
+        link: '/helpers/screenresolutions'
       }
     ]
   }

@@ -5,6 +5,7 @@ import { ToolTip } from '../../atoms/Tooltip'
 import { Header } from '../components/Header'
 import { Markup, dbToCamelCase, camelCaseToDb, grabKeyFromObject, arryToObject } from '../../../utils/helpers'
 import { testResults } from '../../../utils/colordata'
+import { iconList } from '../../../utils/iconList'
 import Prism from "prismjs"
 import '../../../utils/markup.css'
 
@@ -66,199 +67,7 @@ const headingList = [
   },
 ]
 
-let iconList = [
-  {name: 'instagram'},
-  {name: 'brand'},
-  {name: 'social'},
-  {name: 'linecard'},
-  {name: 'scan-gun'},
-  {name: 'purchasing'},
-  {name: 'transfer'},
-  {name: 'move'},
-  {name: 'picking'},
-  {name: 'receiving'},
-  {name: 'catalog'},
-  {name: 'yed'},
-  {name: 'commodity-pricing'},
-  {name: 'inquiry'},
-  {name: 'ratings'},
-  {name: 'service-partners'},
-  {name: 'supplier'},
-  {name: 'suppliers'},
-  {name: 'tracking'},
-  {name: 'soe'},
-  {name: 'call-queues'},
-  {name: 'ion-archive'},
-  {name: 'ion-chevron-left'},
-  {name: 'ion-chevron-right'},
-  {name: 'ion-close-circled'},
-  {name: 'ion-ios-close'},
-  {name: 'ion-ios-search-strong'},
-  {name: 'ion-ios-search'},
-  {name: 'reorder-handle'},
-  {name: 'trash-unavailable'},
-  {name: 'undelete'},
-  {name: 'add-tax-certificate'},
-  {name: 'commodity-pricing1'},
-  {name: 'th-list1'},
-  {name: 'comment'},
-  {name: 'folder'},
-  {name: 'folder-open'},
-  {name: 'angle-double-left'},
-  {name: 'database'},
-  {name: 'question-circle-o'},
-  {name: 'plus'},
-  {name: 'minus'},
-  {name: 'search'},
-  {name: 'star'},
-  {name: 'star-o'},
-  {name: 'user'},
-  {name: 'th-large'},
-  {name: 'th-list'},
-  {name: 'check'},
-  {name: 'close'},
-  {name: 'remove'},
-  {name: 'times'},
-  {name: 'cog'},
-  {name: 'gear'},
-  {name: 'file-o'},
-  {name: 'clock-o'},
-  {name: 'download'},
-  {name: 'inbox'},
-  {name: 'refresh'},
-  {name: 'lock'},
-  {name: 'tag'},
-  {name: 'bookmark'},
-  {name: 'print'},
-  {name: 'camera'},
-  {name: 'text-height'},
-  {name: 'image'},
-  {name: 'photo'},
-  {name: 'picture-o'},
-  {name: 'pencil'},
-  {name: 'map-marker'},
-  {name: 'adjust'},
-  {name: 'edit'},
-  {name: 'pencil-square-o'},
-  {name: 'arrows'},
-  {name: 'step-backward'},
-  {name: 'backward'},
-  {name: 'forward'},
-  {name: 'step-forward'},
-  {name: 'chevron-left'},
-  {name: 'chevron-right'},
-  {name: 'plus-circle'},
-  {name: 'minus-circle'},
-  {name: 'times-circle'},
-  {name: 'check-circle'},
-  {name: 'question-circle'},
-  {name: 'info-circle'},
-  {name: 'times-circle-o'},
-  {name: 'check-circle-o'},
-  {name: 'arrow-right'},
-  {name: 'exclamation-circle'},
-  {name: 'eye'},
-  {name: 'exclamation-triangle'},
-  {name: 'warning'},
-  {name: 'calendar'},
-  {name: 'chevron-up'},
-  {name: 'chevron-down'},
-  {name: 'shopping-cart'},
-  {name: 'key'},
-  {name: 'cogs'},
-  {name: 'gears'},
-  {name: 'sign-out'},
-  {name: 'upload'},
-  {name: 'phone'},
-  {name: 'square-o'},
-  {name: 'bookmark-o'},
-  {name: 'twitter'},
-  {name: 'facebook'},
-  {name: 'facebook-f'},
-  {name: 'bell-o'},
-  {name: 'filter'},
-  {name: 'group'},
-  {name: 'users'},
-  {name: 'copy'},
-  {name: 'files-o'},
-  {name: 'paperclip'},
-  {name: 'floppy-o'},
-  {name: 'save'},
-  {name: 'square'},
-  {name: 'bars'},
-  {name: 'navicon'},
-  {name: 'reorder'},
-  {name: 'list-ul'},
-  {name: 'table'},
-  {name: 'truck'},
-  {name: 'caret-down'},
-  {name: 'caret-up'},
-  {name: 'sort'},
-  {name: 'unsorted'},
-  {name: 'sort-desc'},
-  {name: 'sort-down'},
-  {name: 'sort-asc'},
-  {name: 'sort-up'},
-  {name: 'envelope'},
-  {name: 'bell'},
-  {name: 'file-text-o'},
-  {name: 'plus-square'},
-  {name: 'angle-double-right'},
-  {name: 'angle-left'},
-  {name: 'angle-right'},
-  {name: 'angle-up'},
-  {name: 'angle-down'},
-  {name: 'mobile'},
-  {name: 'mobile-phone'},
-  {name: 'circle-o'},
-  {name: 'quote-left'},
-  {name: 'spinner'},
-  {name: 'circle'},
-  {name: 'folder-o'},
-  {name: 'exclamation'},
-  {name: 'rocket'},
-  {name: 'bullseye'},
-  {name: 'ellipsis-v'},
-  {name: 'minus-square'},
-  {name: 'minus-square-o'},
-  {name: 'check-square'},
-  {name: 'sort-alpha-asc'},
-  {name: 'sort-alpha-desc'},
-  {name: 'youtube'},
-  {name: 'youtube-play'},
-  {name: 'dot-circle-o'},
-  {name: 'plus-square-o'},
-  {name: 'file-pdf-o'},
-  {name: 'file-excel-o'},
-  {name: 'circle-o-notch'},
-  {name: 'paper-plane'},
-  {name: 'send'},
-  {name: 'history'},
-  {name: 'cc-visa'},
-  {name: 'cc-mastercard'},
-  {name: 'cc-discover'},
-  {name: 'cc-amex'},
-  {name: 'trash'},
-  {name: 'paint-brush'},
-  {name: 'area-chart'},
-  {name: 'heartbeat'},
-  {name: 'i-cursor'},
-  {name: 'hand-pointer-o'},
-  {name: 'address-card-o'},
-  {name: 'vcard-o'},
-  {name: 'drivers-license-o'},
-  {name: 'id-card-o'},
-  {name: 'import'},
-  {name: 'arrow_back'},
-  {name: 'attach_file'},
-  {name: 'check2'},
-  {name: 'navigate_before'},
-  {name: 'navigate_next'},
-  {name: 'close2'},
-  {name: 'help'},
-  {name: 'person'},
-  {name: 'playlist_add'}
-]
+
 // let x = testResults.map(item => grabKeyFromObject(item, 'window'))
 // x = {...x}
 // let y = testResults.map(item => item['system'])
@@ -273,24 +82,6 @@ let x = Object.values(Object.values(newArry.sort((a, b) => a.id - b.id).sort((a,
 let filteredList = uniqueIds.map(item => x.find(f => f[item]))
 let filteredListB = uniqueIds.map(item => ({[item]: Object.values(newArry.filter(f => f.id === item))}))
 
-
-const Device = props => {
-
-  let { width, height, system, browserwidth, browserheight } = props
-
-  return (
-    <div style={{ width: Number.parseInt(width, 10)/6, height: Number.parseInt(height, 10)/6 }} className={['box-size m10 border background-white rounded border']}>
-      <div className='box-size tooltip pink border rounded border-black p5' style={{ opacity: .75, width: Number.parseInt(browserwidth, 10)/6, height: Number.parseInt(browserheight, 10)/6, position: '' }}>
-        <ToolTip light={false}><label className={['tooltiptext']}>.{system}</label></ToolTip>
-        <label className='f10'>S. W: {Number.parseInt(width, 10)}</label>
-        <label className='f10'>S. H: {Number.parseInt(height, 10)}</label>
-        <label className='f10'>Br. W: {Number.parseInt(browserwidth, 10)}</label>
-        <label className='f10'>Br. H: {Number.parseInt(browserheight, 10)}</label>
-        <p className='f10 truncate'>{system.substr(0, system.indexOf(')') + 1)}...</p>
-      </div>
-    </div>
-  )
-}
 
 export default class Icons extends React.Component {
   constructor(props){
@@ -307,17 +98,6 @@ export default class Icons extends React.Component {
     Prism.highlightAll()
     let str = 'BUTTS_MCGOO'
 
-    // console.log(camelCaseToDb(dbToCamelCase(str)))
-    // console.log(dbToCamelCase(str))
-    // x = x.map(item => grabKeyFromObject(item, 'window'))
-    // x = JSON.parse(x)
-    // '_3e9cx0xcb'
-    // Object.values(x).map(item => console.log('testResults', Object.keys(item)))
-    // console.log('filteredListB', testResults)
-    // console.log('testResults', filteredList)
-    // console.log('filteredListB', (filteredListB))
-    // filteredListB.map(item => Object.values(item).map(i => console.log(i[0].id)))
-    // console.log('_g0sihvdwm', filteredListB)
   }
 
   render() {
@@ -325,10 +105,6 @@ export default class Icons extends React.Component {
     return (
       <React.Fragment>
       <Header title='Icons' classNames={[]}/>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }} className='p10'>
-        {filteredList.filter(item => Object.values(item)[0].system.includes('iPhone') || Object.values(item)[0].system.includes('iPad') || Object.values(item)[0].system.includes('SAMSUNG'))
-          .sort((a, b) => Object.values(a)[0].screenHeight - Object.values(b)[0].screenHeight).map(item => <Device browserwidth={Object.values(item)[0].browserInnerWidth} browserheight={Object.values(item)[0].browserInnerHeight} width={Object.values(item)[0].screenWidth} height={Object.values(item)[0].screenHeight} system={Object.values(item)[0].system}/>)}
-      </div>
       <div className='p20'>
         <Heading type='h1' classNames={['underline thick']}>Icons</Heading>
         <div style={{ display: 'flex', flexWrap: 'wrap' }} className={['mb20']}>
