@@ -1,6 +1,6 @@
 import React from 'react'
-import { Heading } from '../components/atoms/Heading'
-import { Icon } from '../components/atoms/Icon'
+import { Heading } from '../lib/atoms/Heading'
+import { Icon } from '../lib/atoms/Icon'
 
 export function realHexToRgb(hex){
   hex = parseInt(hex.replace(/^#/, ''), 16)

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Heading } from '../../atoms/Heading'
-import { Icon } from '../../atoms/Icon'
-import { ToolTip } from '../../atoms/Tooltip'
+import { Heading } from '../../../lib'
+import { Icon } from '../../../lib'
+import { ToolTip } from '../../../lib'
 import { Header } from '../components/Header'
 import { Markup, dbToCamelCase, camelCaseToDb, grabKeyFromObject, arryToObject } from '../../../utils/helpers'
 import { testResults } from '../../../utils/colordata'
@@ -158,7 +158,7 @@ export default class Icons extends React.Component {
               <Markup
                 key={index}
                 item={item}
-                str={`import { Icon } from '@jedhelmers/stylesheet/src/components/atoms/Icon'\n\n<Icon icon='${item.type}' \n\tclassNames={['${item.classNames.join("', '")}']} \n\tsize='${item.size}'\n/>`}
+                str={`import { Icon } from '@jedhelmers/stylesheet/src/lib/atoms/Icon'\n\n<Icon icon='${item.type}' \n\tclassNames={['${item.classNames.join("', '")}']} \n\tsize='${item.size}'\n/>`}
                 func={<Icon icon={item.type} classNames={item.classNames} size={item.size}/>}
               />
             ))}

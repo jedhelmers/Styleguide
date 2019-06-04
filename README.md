@@ -12,7 +12,7 @@ To launch the referenceable Pattern Library:
 
 1. To use, simply run `npm i @jedhelmers/styleguide` in terminal.
 2. Then `npm install`
-3. Usage: `import { Heading } from '@jedhelmers/styleguide/src/components/atoms/Heading'`
+3. Usage: `import { Heading } from '@jedhelmers/styleguide/src/lib/atoms/Heading'`
 
 I'm sure there's a better way to design the folder structure, but seeing how this is a trial-run, I'm not too terribly worried about it.
 

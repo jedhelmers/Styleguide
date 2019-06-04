@@ -1,6 +1,6 @@
 import React from 'react';
-import { Heading } from '../../atoms/Heading'
-import { Field } from '../../atoms/Field'
+import { Heading } from '../../../lib'
+import { Field } from '../../../lib'
 import { Header } from '../components/Header'
 import { getColors } from '../../../utils/accessibilitycolors'
 import { hexToRgb } from '../../../utils/helpers'

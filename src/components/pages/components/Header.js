@@ -1,7 +1,7 @@
 // UTILITY FOR PATTERN LIBRARY
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Heading } from '../../atoms/Heading'
+import { Heading } from '../../../lib/atoms/Heading'
 
 export const Header = props => {
   let {

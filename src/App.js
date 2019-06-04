@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { Heading } from './components/atoms/Heading'
+import { Heading } from './lib/atoms/Heading'
 import PatternLibrary from './components/pages/PatternLibrary'
-import Navigation from './components/molecules/Navigation'
+import Navigation from './lib/molecules/Navigation'
 import Typography from './components/pages/guidelines/Typography'
 import Color from './components/pages/guidelines/Color'
 import MediaQueries from './components/pages/guidelines/MediaQueries'
@@ -18,9 +18,9 @@ import ContentLayout from './components/pages/components/ContentLayout'
 import PageLayout from './components/pages/components/PageLayout'
 import ScreenResolutions from './components/pages/helpers/ScreenResolutions'
 
-import { Icon } from './components/atoms/Icon'
-import './App.css';
-import './stylesheets/root.css'
+import { Icon } from './lib/atoms/Icon'
+import './lib/stylesheets/App.css';
+import './lib/stylesheets/root.css'
 
 function App() {
   return (

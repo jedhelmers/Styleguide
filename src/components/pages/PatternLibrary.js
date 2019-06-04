@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Heading } from '../atoms/Heading'
+import { Heading } from '../../lib'
 import { Header } from './components/Header'
 
 export default function Typography() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading } from '../../atoms/Heading'
+import { Heading } from '../../../lib'
 import { Header } from '../components/Header'
 export default function Typography() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Heading } from '../../atoms/Heading'
-import { Icon } from '../../atoms/Icon'
-import { ToolTip } from '../../atoms/Tooltip'
+import { Heading } from '../../../lib'
+import { Icon } from '../../../lib'
+import { ToolTip } from '../../../lib'
 import { Header } from '../components/Header'
 import { Markup } from '../../../utils/helpers'
 import Prism from "prismjs"

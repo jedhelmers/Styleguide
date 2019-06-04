@@ -1,7 +1,7 @@
 import React from 'react';
-import { Heading } from '../../atoms/Heading'
-import { Icon } from '../../atoms/Icon'
-import { Button } from '../../atoms/Buttons'
+import { Heading } from '../../../lib'
+import { Icon } from '../../../lib'
+import { Button } from '../../../lib'
 import { Header } from '../components/Header'
 import { Markup } from '../../../utils/helpers'
 import Prism from "prismjs"
@@ -192,7 +192,7 @@ export default class Buttons extends React.Component {
               <Markup
                 key={index}
                 item={item}
-                str={`import { Button } from '@jedhelmers/stylesheet/src/components/atoms/Buttons'\n\n<Button \n\tname={'name'} \n\tstyle={'${item.style}'} \n\tsize='${item.size}' \n\ticon={${item.icon}} \n\tclassNames={['${item.classNames}']} \n\taction={() => bam(${item.type})}\n>\n\t${item.bodyString}\n</Button>`}
+                str={`import { Button } from '@jedhelmers/stylesheet/src/lib/atoms/Buttons'\n\n<Button \n\tname={'name'} \n\tstyle={'${item.style}'} \n\tsize='${item.size}' \n\ticon={${item.icon}} \n\tclassNames={['${item.classNames}']} \n\taction={() => bam(${item.type})}\n>\n\t${item.bodyString}\n</Button>`}
                 func={<Button name={'name'} style={item.style} size={item.size} icon={item.icon} classNames={item.classNames} action={() => bam(item.type)}>{item.body}</Button>}
               />
             ))}

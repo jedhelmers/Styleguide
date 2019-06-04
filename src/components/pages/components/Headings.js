@@ -1,8 +1,8 @@
 import React from 'react'
-import { Heading } from '../../atoms/Heading'
-import { Label } from '../../atoms/Label'
-import { Link } from '../../atoms/Link'
-import { Icon } from '../../atoms/Icon'
+import { Heading } from '../../../lib'
+import { Label } from '../../../lib'
+import { Link } from '../../../lib'
+import { Icon } from '../../../lib'
 import { Header } from '../components/Header'
 import { Markup, toTitleCase } from '../../../utils/helpers'
 import Prism from "prismjs"
@@ -250,7 +250,7 @@ export default class Headings extends React.Component {
               <Markup
                 key={index}
                 item={item}
-                str={`import { Heading } from '@jedhelmers/stylesheet/src/components/atoms/Heading'\n\n<Heading type='${item.type}' classNames={['${item.classNames.join("', '")}']}>\n\tThe quick funky wizards leap over vases\n</Heading>`}
+                str={`import { Heading } from '@jedhelmers/stylesheet/src/lib/atoms/Heading'\n\n<Heading type='${item.type}' classNames={['${item.classNames.join("', '")}']}>\n\tThe quick funky wizards leap over vases\n</Heading>`}
                 func={<Heading type={item.type} classNames={item.classNames}>The Five Boxing Wizards Jump Quickly. 1234567890</Heading>}
               />
             ))}
