@@ -2,9 +2,9 @@ import React from 'react'
 
 export const Link = (props) => {
   let {
-    className,
+    className = [],
     action,
-    children,
+    children = 'Add children',
     to
   } = props
 

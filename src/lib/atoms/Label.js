@@ -2,9 +2,9 @@ import React from 'react'
 
 export const Label = (props) => {
   let {
-    className,
+    className = [],
     action,
-    children
+    children = 'Add children'
   } = props
 
   return React.createElement(

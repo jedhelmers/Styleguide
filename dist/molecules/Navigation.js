@@ -1,11 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Router } from 'react-router'
-import { Icon } from '../../lib/atoms/Icon'
-import { Heading } from '../../lib/atoms/Heading'
-import { Field } from '../../lib/atoms/Field'
-import { getMenuItems } from '../../utils/menu'
-import { toTitleCase, generateUID } from '../../utils/helpers'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Router } from 'react-router';
+import { Icon } from '../../lib/atoms/Icon';
+import { Heading } from '../../lib/atoms/Heading';
+import { Field } from '../../lib/atoms/Field';
+import { getMenuItems } from '../../utils/menu';
+import { toTitleCase, generateUID } from '../../utils/helpers';
 //
 // let getMenu = getMenuItems()
 // let selectedPage = null
@@ -155,5 +155,5 @@ import { toTitleCase, generateUID } from '../../utils/helpers'
 // }
 
 export default function Navigation(props) {
-  return React.createElement('div', {}, 'Butts')
+  return React.createElement('div', {}, 'Butts');
 }

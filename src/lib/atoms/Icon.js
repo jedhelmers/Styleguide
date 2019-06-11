@@ -2,10 +2,10 @@ import React from 'react'
 
 export const Icon = (props) => {
   let {
-    icon,
+    icon = 'edit',
     focusable,
-    classNames,
-    size,
+    classNames = [],
+    size = 72,
     styles = [],
     onClick,
     name = ''

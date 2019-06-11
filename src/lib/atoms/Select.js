@@ -28,22 +28,73 @@ export const Select = (props) => {
   } = props
 
   return (
-    <React.Fragment>
-
-    <div className={[focused !== 'idle' && 'border-primary', 'flex-spacebetween mb10 field-wrapper', focused === 'in' && 'field-wrapper-focus', error && `field-wrapper-${error.toLowerCase()}`, classNames.join(' ')].join(' ')} style={{ height: 55 }}>
-      <div className='flex-reverse-v' style={{ width: '100%' }}>
-        <select>
-
-        </select>
-        <Label className={[value === '' ? focused : ''].join(' ')}>{children}</Label>
-      </div>
-      {error !== '' && (
-        <Icon icon='exclamation-triangle' classNames={[error]} size='md' styles={{ paddingTop: 10 }}/>
-      )}
-    </div>
-    {error !== '' && (
-      <FieldStatus error={error} name={name}/>
-    )}
-    </React.Fragment>
+    React.createElement(
+      'div',
+      {
+        className: [focused !== 'idle' && 'border-primary', 'flex-spacebetween mb10 field-wrapper', focused === 'in' && 'field-wrapper-focus', error && `field-wrapper-${error.toLowerCase()}`, classNames.join(' ')].join(' '),
+        style: { height: 55 }
+      },
+      React.createElement(
+        'div',
+        {
+          className: 'flex-reverse-v',
+          style: { width: '100%' }
+        },
+        React.createElement(
+          'select'
+        ),
+        React.createElement(
+          Label,
+          {
+            className: [value === '' ? focused : ''].join(' ')
+          },
+          children
+        )
+      ),
+      error !== '' && (
+        React.createElement(
+          Icon,
+          {
+            icon: 'exclamation-triangle',
+            classNames: [error],
+            size: 'md',
+            styles: { paddingTop: 10 }
+          }
+        )
+      )
+    )
+    // <div className={[focused !== 'idle' && 'border-primary', 'flex-spacebetween mb10 field-wrapper', focused === 'in' && 'field-wrapper-focus', error && `field-wrapper-${error.toLowerCase()}`, classNames.join(' ')].join(' ')} style={{ height: 55 }}>
+      // <div className='flex-reverse-v' style={{ width: '100%' }}>
+        // <select>
+        //
+        // </select>
+        // <Label className={[value === '' ? focused : ''].join(' ')}>{children}</Label>
+      // </div>
+    //   {error !== '' && (
+    //     <Icon icon='exclamation-triangle' classNames={[error]} size='md' styles={{ paddingTop: 10 }}/>
+    //   )}
+    // </div>
+    // {error !== '' && (
+    //   <FieldStatus error={error} name={name}/>
+    // )}
   )
 }
+//
+//
+// <React.Fragment>
+//
+// <div className={[focused !== 'idle' && 'border-primary', 'flex-spacebetween mb10 field-wrapper', focused === 'in' && 'field-wrapper-focus', error && `field-wrapper-${error.toLowerCase()}`, classNames.join(' ')].join(' ')} style={{ height: 55 }}>
+//   <div className='flex-reverse-v' style={{ width: '100%' }}>
+//     <select>
+//
+//     </select>
+//     <Label className={[value === '' ? focused : ''].join(' ')}>{children}</Label>
+//   </div>
+//   {error !== '' && (
+//     <Icon icon='exclamation-triangle' classNames={[error]} size='md' styles={{ paddingTop: 10 }}/>
+//   )}
+// </div>
+// {error !== '' && (
+//   <FieldStatus error={error} name={name}/>
+// )}
+// </React.Fragment>

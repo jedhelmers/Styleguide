@@ -1,31 +1,40 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-export const Button = props => {
+export const Button = (props) => {
   let {
-    children,
+    children = 'Add children',
     style = 'default',
-    name,
-    type,
-    classNames,
+    name = 'name',
+    type = 'primary',
+    classNames = [],
     icon = false,
-    action,
+    action = '',
     size = 'regular'
   } = props
 
   return (
-      <button
-        name={name}
-        className={[style, classNames.join(' '), size].join(' ')}
-        style={
+    React.createElement(
+      'button',
+      {
+        name: name,
+        className: [style, classNames.join(' '), size].join(' '),
+        onClick: action,
+        style: (
           !icon
           ? { minWidth: 100, display: 'flex', justifyContent: 'center', paddingLeft: 10, paddingRight: 10 }
           : { borderRadius: 50, fontSize: 12, height: 28, width: 28, border: 'none' }
-        }
-        onClick={action}
-      >
-        <span style={{ fontSize: 'inherit'}}>{children}</span>
-      </button>
+        ),
+      },
+      React.createElement(
+        'span',
+        {
+          style: { fontSize: 'inherit'}
+        },
+        children
+      )
+    )
+
+
   )
 }
 //

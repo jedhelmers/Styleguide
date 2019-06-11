@@ -3,7 +3,7 @@ import { Heading } from '../../../lib/atoms/Heading'
 import { Icon } from '../../../lib/atoms/Icon'
 import { Field } from '../../../lib/atoms/Field'
 import { Select } from '../../../lib/atoms/Select'
-import { CheckBox } from '../../../lib/atoms/CheckBox'
+import { CheckBox } from '../../../lib/atoms/Field'
 import { Header } from '../components/Header'
 import { Markup, hexToRgb, realHexToRgb } from '../../../utils/helpers'
 import Prism from "prismjs"

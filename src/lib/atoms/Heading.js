@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 export const Heading = props => {
   let {
-    children,
-    type,
-    classNames
+    children = 'Add children',
+    type = 'h1',
+    classNames = []
   } = props
 
   return (
